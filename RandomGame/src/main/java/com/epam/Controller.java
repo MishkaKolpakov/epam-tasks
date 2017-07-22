@@ -68,9 +68,9 @@ public class Controller {
 				if (model.checkRange(tmp)) {
 					view.displayMessage(model.checkUserInput(tmp));
 					view.displayHistory(model);
-					if(model.endGame) {
+					if (model.endGame) {
 						break;
-						}
+					}
 					view.displayCurrentDiapasone(model);
 				} else {
 					view.displayOutOfRange(model);

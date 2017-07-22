@@ -27,12 +27,8 @@ public class View {
 
 	public void displayCurrentDiapasone(Model model) {
 		StringBuilder diapasone = new StringBuilder();
-		diapasone.append(CURRENT_DIAPASONE)
-				 .append("(")
-				 .append(model.getLowerBound())
-				 .append(",")
-				 .append(model.getUpperBound())
-				 .append(")");
+		diapasone.append(CURRENT_DIAPASONE).append("(").append(model.getLowerBound()).append(",")
+				.append(model.getUpperBound()).append(")");
 		displayMessage(diapasone.toString());
 	}
 
