@@ -67,6 +67,10 @@ public class Controller {
 				int tmp = sc.nextInt();
 				if (model.checkRange(tmp)) {
 					view.displayMessage(model.checkUserInput(tmp));
+					view.displayHistory(model);
+					if(model.endGame) {
+						break;
+						}
 					view.displayCurrentDiapasone(model);
 				} else {
 					view.displayOutOfRange(model);

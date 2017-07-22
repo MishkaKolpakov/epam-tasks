@@ -7,6 +7,7 @@ public class Model {
 	private int lowerBound = Constants.LOWER_BOUND;
 	private int upperBound = Constants.UPPER_BOUND;
 	private int randomValue;
+	boolean endGame;
 
 	private ArrayList<Integer> triesHistory = new ArrayList<>();
 
@@ -60,8 +61,9 @@ public class Model {
 	}
 
 	public String checkUserInput(int number) {
-
+		triesHistory.add(number);
 		if (number == randomValue) {
+			endGame = true;
 			return Constants.CONGRATULATIONS;
 		} else {
 			if (number > randomValue) {
