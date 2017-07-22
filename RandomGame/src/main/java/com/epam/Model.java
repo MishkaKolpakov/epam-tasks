@@ -1,14 +1,18 @@
 package com.epam;
 
 import java.util.ArrayList;
-
 import com.epam.interfaces.Constants;
 
 public class Model {
 	private int lowerBound = Constants.LOWER_BOUND;
 	private int upperBound = Constants.UPPER_BOUND;
 	private int randomValue;
-	ArrayList<Integer> triesHistory = new ArrayList<>();
+
+	private ArrayList<Integer> triesHistory = new ArrayList<>();
+
+	public ArrayList<Integer> getTriesHistory() {
+		return triesHistory;
+	}
 
 	public int getLowerBound() {
 		return lowerBound;
@@ -33,9 +37,40 @@ public class Model {
 	public void setRandomValue(int randomValue) {
 		this.randomValue = randomValue;
 	}
-	
+
+	public int random(int lowerBound, int upperBound) {
+		return (int) (Math.random() * (upperBound - lowerBound)) + lowerBound;
+	}
+
 	public boolean checkRange(int userNumber) {
 		return (userNumber > lowerBound) && (userNumber < upperBound);
 	}
 
+	public boolean checkInputRegime(String regime) {
+		return regime.toUpperCase().equals("YES") || regime.toUpperCase().equals("Y")
+				|| regime.toUpperCase().equals("NO") || regime.toUpperCase().equals("N");
+	}
+
+	public boolean chooseGameRegime(String regime) {
+		if (regime.toUpperCase().equals("YES") || regime.toUpperCase().equals("Y")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public String checkUserInput(int number) {
+
+		if (number == randomValue) {
+			return Constants.CONGRATULATIONS;
+		} else {
+			if (number > randomValue) {
+				upperBound = number;
+				return Constants.LOWER;
+			} else {
+				lowerBound = number;
+				return Constants.HIGHER;
+			}
+		}
+	}
 }
