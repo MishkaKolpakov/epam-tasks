@@ -15,13 +15,13 @@ public class Controller {
 	public void runGame() {
 		Scanner scanner = new Scanner(System.in);
 		view.displayMessage(view.INTRODUCTION_MESSAGE);
-		
+
 		if (!model.chooseGameRegime(inputGameRegime(scanner))) {
 			model.setLowerBound(inputLowerDiapasone(scanner));
 			model.setUpperBound(inputHigherDiapasone(scanner));
 		}
 		model.setRandomValue(model.random(model.getLowerBound(), model.getUpperBound()));
-		
+
 		guessNumber(scanner);
 	}
 
@@ -44,6 +44,7 @@ public class Controller {
 	public int inputLowerDiapasone(Scanner sc) {
 		view.displayMessage(view.INPUT_LOWER_BOUND);
 		view.displayCurrentDiapasone(model);
+
 		while (true) {
 			int tmp = inputIntDiapasoneValue(sc);
 			if (model.checkLowerDifferance(tmp)) {
@@ -58,6 +59,7 @@ public class Controller {
 	public int inputHigherDiapasone(Scanner sc) {
 		view.displayMessage(view.INPUT_UPPER_BOUND);
 		view.displayCurrentDiapasone(model);
+
 		while (true) {
 			int tmp = inputIntDiapasoneValue(sc);
 			if (model.checkHigherDifferance(tmp)) {
@@ -89,7 +91,7 @@ public class Controller {
 			int tmp = inputIntDiapasoneValue(sc);
 			view.displayMessage(model.checkUserInput(tmp));
 			view.displayHistory(model);
-			if (model.endGame) {
+			if (model.isEndGame()) {
 				break;
 			}
 			view.displayCurrentDiapasone(model);
