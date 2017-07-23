@@ -43,13 +43,51 @@ public class TestController {
 		int tmp = controller.inputIntDiapasoneValue(scanner);
 		assertSame(89, tmp);
 	}
-	
+
 	@Test
 	public void testInputHigherDiapasone() {
 		scanner = new Scanner("35");
 		model.setLowerBound(25);
 		int tmp = controller.inputIntDiapasoneValue(scanner);
 		assertSame(35, tmp);
+	}
+
+	@Test
+	public void testGameRegimeNo() {
+		scanner = new Scanner("no");
+		String tmp = controller.inputGameRegime(scanner);
+		assertEquals("no", tmp);
+	}
+
+	@Test
+	public void testGameRegimeN() {
+		scanner = new Scanner("n");
+		String tmp = controller.inputGameRegime(scanner);
+		assertEquals("n", tmp);
+	}
+
+	@Test
+	public void testGameRegimeYes() {
+		scanner = new Scanner("yes");
+		String tmp = controller.inputGameRegime(scanner);
+		assertEquals("yes", tmp);
+	}
+
+	@Test
+	public void testGameRegimeY() {
+		scanner = new Scanner("y");
+		String tmp = controller.inputGameRegime(scanner);
+		assertEquals("y", tmp);
+	}
+
+	@Test
+	public void testGuessNumberEndGame() {
+		scanner = new Scanner("25");
+		model.setRandomValue(25);
+		model.setLowerBound(15);
+		model.setUpperBound(33);
+		controller.guessNumber(scanner);
+		assertTrue(model.isEndGame());
 	}
 
 }
