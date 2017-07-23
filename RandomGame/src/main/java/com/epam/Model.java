@@ -7,7 +7,12 @@ public class Model {
 	private int lowerBound = Constants.LOWER_BOUND;
 	private int upperBound = Constants.UPPER_BOUND;
 	private int randomValue;
-	boolean endGame;
+	private boolean endGame;
+
+	public boolean isEndGame() {
+		return endGame;
+	}
+
 	private ArrayList<Integer> triesHistory = new ArrayList<>();
 
 	public ArrayList<Integer> getTriesHistory() {
