@@ -17,8 +17,8 @@ public class Controller {
 		view.displayMessage(view.INTRODUCTION_MESSAGE);
 
 		if (!model.chooseGameRegime(inputGameRegime(scanner))) {
-			model.setLowerBound(inputLowerDiapasone(scanner));
-			model.setUpperBound(inputHigherDiapasone(scanner));
+			model.setLowerBound(inputLowerDiapason(scanner));
+			model.setUpperBound(inputHigherDiapason(scanner));
 		}
 		model.setRandomValue(model.random(model.getLowerBound(), model.getUpperBound()));
 
@@ -41,9 +41,9 @@ public class Controller {
 		}
 	}
 
-	public int inputLowerDiapasone(Scanner sc) {
+	public int inputLowerDiapason(Scanner sc) {
 		view.displayMessage(view.INPUT_LOWER_BOUND);
-		view.displayCurrentDiapasone(model);
+		view.displayCurrentDiapason(model);
 
 		while (true) {
 			int tmp = inputIntDiapasoneValue(sc);
@@ -56,9 +56,9 @@ public class Controller {
 		}
 	}
 
-	public int inputHigherDiapasone(Scanner sc) {
+	public int inputHigherDiapason(Scanner sc) {
 		view.displayMessage(view.INPUT_UPPER_BOUND);
-		view.displayCurrentDiapasone(model);
+		view.displayCurrentDiapason(model);
 
 		while (true) {
 			int tmp = inputIntDiapasoneValue(sc);
@@ -85,7 +85,7 @@ public class Controller {
 
 	public void guessNumber(Scanner sc) {
 		view.displayMessage(view.START_GAME);
-		view.displayCurrentDiapasone(model);
+		view.displayCurrentDiapason(model);
 
 		while (true) {
 			int tmp = inputIntDiapasoneValue(sc);
@@ -94,7 +94,7 @@ public class Controller {
 			if (model.isEndGame()) {
 				break;
 			}
-			view.displayCurrentDiapasone(model);
+			view.displayCurrentDiapason(model);
 		}
 	}
 }

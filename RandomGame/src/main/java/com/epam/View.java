@@ -25,7 +25,7 @@ public class View {
 		displayMessage(history.toString());
 	}
 
-	public void displayCurrentDiapasone(Model model) {
+	public void displayCurrentDiapason(Model model) {
 		StringBuilder diapasone = new StringBuilder();
 		diapasone.append(CURRENT_DIAPASONE).append("(").append(model.getLowerBound()).append(",")
 				.append(model.getUpperBound()).append(")");
@@ -34,6 +34,6 @@ public class View {
 
 	public void displayOutOfRange(Model model) {
 		displayMessage(WRONG_RANGE_INPUT);
-		displayCurrentDiapasone(model);
+		displayCurrentDiapason(model);
 	}
 }
