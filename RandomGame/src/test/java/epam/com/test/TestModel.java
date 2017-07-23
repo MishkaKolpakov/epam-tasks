@@ -2,33 +2,37 @@ package epam.com.test;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 import com.epam.Model;
 
 public class TestModel {
 	Model model;
-	
+
 	@Before
 	public void initModel() {
 		model = new Model();
 	}
-	
+
 	@Test
-	public void testDefaultRandom() {
-		int randomValue = model.random(0, 100);
-		assertTrue(randomValue > 0 && randomValue < 100);
-	}
-	
-	@Test
-	public void testEnteredRandom() {
-		int randomValue = model.random(15, 60);
-		assertTrue(randomValue > 15 && randomValue < 60);
-	}
-	
-	@Test
-	public void testWrongRandom() {
-		int randomValue = model.random(-25, 25);
-		assertTrue(randomValue > -25 && randomValue < 25);
+	public void testRandom() {
+		int tmp = model.random(0, 100);
+		assertTrue(tmp > 0 && tmp < 100);
 	}
 
+	@Test
+	public void testCheckInRange() {
+		assertTrue(model.checkRange(50));
+	}
+
+	@Test
+	public void testCheckLowerRange() {
+		assertFalse(model.checkRange(0));
+	}
+
+	@Test
+	public void testCheckHigherRange() {
+		assertFalse(model.checkRange(100));
+	}
 }
