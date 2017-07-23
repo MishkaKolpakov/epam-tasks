@@ -43,6 +43,12 @@ public class Model {
 		this.randomValue = randomValue;
 	}
 
+	/**
+	 * Random method uses to generate random value in determined range
+	 * To exclude lower bound value makes increment operation
+	 * @param lowerBound, upperBound
+	 * @return tmp
+	 */
 	public int random(int lowerBound, int upperBound) {
 		int tmp = (int) (Math.random() * (upperBound - lowerBound)) + lowerBound;
 		if (tmp == lowerBound) {
@@ -50,16 +56,31 @@ public class Model {
 		}
 		return tmp;
 	}
-
+	
+	/**
+	 * Method check the entered value if it`s in range
+	 * @param userNumber
+	 * @return boooleanValue
+	 */
 	public boolean checkRange(int userNumber) {
 		return (userNumber > lowerBound) && (userNumber < upperBound);
 	}
 
+	/**
+	 * Method used to made user input of values ("yes", "no", "y", "n")
+	 * @param regime
+	 * @return boooleanValue
+	 */
 	public boolean checkInputRegime(String regime) {
 		return regime.toUpperCase().equals("YES") || regime.toUpperCase().equals("Y")
 				|| regime.toUpperCase().equals("NO") || regime.toUpperCase().equals("N");
 	}
-
+	
+	/**
+	 * Method checks which game regime user chosen
+	 * @param regime
+	 * @return boooleanValue
+	 */
 	public boolean chooseGameRegime(String regime) {
 		if (regime.toUpperCase().equals("YES") || regime.toUpperCase().equals("Y")) {
 			return true;
@@ -67,15 +88,31 @@ public class Model {
 			return false;
 		}
 	}
-
-	public boolean checkLowerDifferance(int value) {
-		return (value < Constants.UPPER_BOUND - Constants.DIFFERANCE);
+	
+	/**
+	 * Method exclude input of lower bound that makes impossible range of 10 numbers
+	 * @param inputValue
+	 * @return boooleanValue
+	 */
+	public boolean checkLowerDifferance(int inputValue) {
+		return (inputValue < Constants.UPPER_BOUND - Constants.DIFFERENCE);
 	}
-
-	public boolean checkHigherDifferance(int value) {
-		return (value >= lowerBound + Constants.DIFFERANCE);
+	
+	/**
+	 * Method exclude input of upper bound to make at least range of 10 numbers
+	 * @param inputValue
+	 * @return boooleanValue
+	 */
+	public boolean checkHigherDifferance(int inputValue) {
+		return (inputValue >= lowerBound + Constants.DIFFERENCE);
 	}
-
+	
+	/**
+	 * Method return prompts to user where number is
+	 * if user guessed number the game ends;
+	 * @param number
+	 * @return stringContant
+	 */
 	public String checkUserInput(int number) {
 		triesHistory.add(number);
 		if (number == randomValue) {
