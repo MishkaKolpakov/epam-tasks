@@ -15,12 +15,13 @@ public class Controller {
 	public void runGame() {
 		Scanner scanner = new Scanner(System.in);
 		view.displayMessage(view.INTRODUCTION_MESSAGE);
+		
 		if (!model.chooseGameRegime(inputGameRegime(scanner))) {
 			model.setLowerBound(inputLowerDiapasone(scanner));
 			model.setUpperBound(inputHigherDiapasone(scanner));
 		}
 		model.setRandomValue(model.random(model.getLowerBound(), model.getUpperBound()));
-
+		
 		guessNumber(scanner);
 	}
 

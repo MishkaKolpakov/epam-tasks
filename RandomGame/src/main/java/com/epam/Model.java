@@ -39,7 +39,11 @@ public class Model {
 	}
 
 	public int random(int lowerBound, int upperBound) {
-		return (int) (Math.random() * (upperBound - lowerBound)) + lowerBound;
+		int tmp = (int) (Math.random() * (upperBound - lowerBound)) + lowerBound;
+		if (tmp == lowerBound) {
+			tmp++;
+		}
+		return tmp;
 	}
 
 	public boolean checkRange(int userNumber) {
@@ -62,7 +66,7 @@ public class Model {
 	public boolean checkLowerDifferance(int value) {
 		return (value < Constants.UPPER_BOUND - Constants.DIFFERANCE);
 	}
-	
+
 	public boolean checkHigherDifferance(int value) {
 		return (value >= lowerBound + Constants.DIFFERANCE);
 	}
