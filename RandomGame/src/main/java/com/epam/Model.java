@@ -8,7 +8,6 @@ public class Model {
 	private int upperBound = Constants.UPPER_BOUND;
 	private int randomValue;
 	boolean endGame;
-
 	private ArrayList<Integer> triesHistory = new ArrayList<>();
 
 	public ArrayList<Integer> getTriesHistory() {
@@ -58,6 +57,14 @@ public class Model {
 		} else {
 			return false;
 		}
+	}
+
+	public boolean checkLowerDifferance(int value) {
+		return (value < Constants.UPPER_BOUND - Constants.DIFFERANCE);
+	}
+	
+	public boolean checkHigherDifferance(int value) {
+		return (value >= lowerBound + Constants.DIFFERANCE);
 	}
 
 	public String checkUserInput(int number) {

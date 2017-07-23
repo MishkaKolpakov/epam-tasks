@@ -15,20 +15,16 @@ public class Controller {
 	public void runGame() {
 		Scanner scanner = new Scanner(System.in);
 		view.displayMessage(view.INTRODUCTION_MESSAGE);
-
 		if (!model.chooseGameRegime(inputGameRegime(scanner))) {
-			model.setLowerBound(inputDiapasone(scanner, view.INPUT_LOWER_BOUND));
-			model.setUpperBound(inputDiapasone(scanner, view.INPUT_UPPER_BOUND));
+			model.setLowerBound(inputLowerDiapasone(scanner));
+			model.setUpperBound(inputHigherDiapasone(scanner));
 		}
 		model.setRandomValue(model.random(model.getLowerBound(), model.getUpperBound()));
 
-		inputUserNumber(scanner);
+		guessNumber(scanner);
 	}
 
-	public int inputDiapasone(Scanner sc, String invitation) {
-		view.displayMessage(invitation);
-		view.displayCurrentDiapasone(model);
-
+	public int inputIntDiapasoneValue(Scanner sc) {
 		while (true) {
 			if (!sc.hasNextInt())
 				view.displayMessage(view.WRONG_INT_INPUT);
@@ -44,6 +40,34 @@ public class Controller {
 		}
 	}
 
+	public int inputLowerDiapasone(Scanner sc) {
+		view.displayMessage(view.INPUT_LOWER_BOUND);
+		view.displayCurrentDiapasone(model);
+		while (true) {
+			int tmp = inputIntDiapasoneValue(sc);
+			if (model.checkLowerDifferance(tmp)) {
+				return tmp;
+			} else {
+				view.displayOutOfRange(model);
+				continue;
+			}
+		}
+	}
+
+	public int inputHigherDiapasone(Scanner sc) {
+		view.displayMessage(view.INPUT_UPPER_BOUND);
+		view.displayCurrentDiapasone(model);
+		while (true) {
+			int tmp = inputIntDiapasoneValue(sc);
+			if (model.checkHigherDifferance(tmp)) {
+				return tmp;
+			} else {
+				view.displayOutOfRange(model);
+				continue;
+			}
+		}
+	}
+
 	public String inputGameRegime(Scanner sc) {
 		while (true) {
 			String tmp = sc.nextLine();
@@ -56,26 +80,18 @@ public class Controller {
 		}
 	}
 
-	public void inputUserNumber(Scanner sc) {
+	public void guessNumber(Scanner sc) {
 		view.displayMessage(view.START_GAME);
 		view.displayCurrentDiapasone(model);
 
 		while (true) {
-			if (!sc.hasNextInt()) {
-				view.displayMessage(view.WRONG_INT_INPUT);
-			} else {
-				int tmp = sc.nextInt();
-				if (model.checkRange(tmp)) {
-					view.displayMessage(model.checkUserInput(tmp));
-					view.displayHistory(model);
-					if (model.endGame) {
-						break;
-					}
-					view.displayCurrentDiapasone(model);
-				} else {
-					view.displayOutOfRange(model);
-				}
+			int tmp = inputIntDiapasoneValue(sc);
+			view.displayMessage(model.checkUserInput(tmp));
+			view.displayHistory(model);
+			if (model.endGame) {
+				break;
 			}
+			view.displayCurrentDiapasone(model);
 		}
 	}
 }

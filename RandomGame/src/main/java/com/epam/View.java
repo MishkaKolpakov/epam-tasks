@@ -20,7 +20,7 @@ public class View {
 		StringBuilder history = new StringBuilder();
 		history.append(TRIES_HISTORY);
 		for (Integer tmp : model.getTriesHistory()) {
-			history.append(tmp + " ");
+			history.append(tmp).append(" ");
 		}
 		displayMessage(history.toString());
 	}
