@@ -3,6 +3,14 @@ package model.entity.plant;
 public class Flower {
 
 	private FlowerType flowerType;
+	private boolean needSupport;
+	private boolean needNorish;
+
+	public Flower(FlowerType flowerType, boolean needSupport, boolean needNorish) {
+		this.flowerType = flowerType;
+		this.needNorish = needNorish;
+		this.needSupport = needSupport;
+	}
 
 	public boolean isNeedSupport() {
 		return needSupport;
@@ -20,15 +28,18 @@ public class Flower {
 		this.needNorish = needNorish;
 	}
 
-	private boolean needSupport;
-	private boolean needNorish;
-
 	public FlowerType getFlowerType() {
 		return flowerType;
 	}
 
 	public void setFlowerType(FlowerType flowerType) {
 		this.flowerType = flowerType;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return " " + flowerType;
 	}
 
 }

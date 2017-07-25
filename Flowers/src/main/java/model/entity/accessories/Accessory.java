@@ -10,5 +10,10 @@ public class Accessory {
 	public void setAccessoryType(AccessoryType accessoryType) {
 		this.accessoryType = accessoryType;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return accessoryType + "\n";
+	}
 
 }

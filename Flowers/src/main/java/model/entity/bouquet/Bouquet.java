@@ -1,5 +1,7 @@
 package model.entity.bouquet;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -12,8 +14,8 @@ public class Bouquet {
 	private BouquetHoliday bouquetHoliday;
 	private BouquetPrice bouquetPrice;
 	private BouquetSize bouquetSize;
-	private List<Flower> flowers;
-	private Set<Accessory> accessories;
+	private ArrayList<Flower> flowers = new ArrayList<>();
+	private HashSet<Accessory> accessories = new HashSet<>();
 
 	public List<Flower> getFlowers() {
 		return flowers;
@@ -69,6 +71,22 @@ public class Bouquet {
 
 	public void setBouquetSize(BouquetSize bouquetSize) {
 		this.bouquetSize = bouquetSize;
+	}
+
+	@Override
+	public String toString() {
+		StringBuffer flowerOutput = new StringBuffer();
+		
+		for (Flower flowers : flowers) {
+			flowerOutput.append(flowers.toString()).append(" ");
+		}
+
+		StringBuffer accessoryOutput = new StringBuffer();
+		for (Accessory accessory : accessories) {
+			accessoryOutput.append(accessory.toString()).append(" ");
+		}
+		return flowerOutput.toString() + accessoryOutput.toString() + bouquetForm + " " + bouquetFreshness + " " + bouquetHoliday + " " + bouquetPrice
+				+ " " + bouquetSize + " ";
 	}
 
 }
