@@ -1,14 +1,12 @@
 package controller;
 
-import model.Model;
 import view.View;
 
 
 public class Controller {
-	Model model;
-	View view;
-	public Controller(Model model, View view) {
-		this.model = model;
+	View view = new View();
+	
+	public Controller(View view) {
 		this.view = view;
 	}
 
