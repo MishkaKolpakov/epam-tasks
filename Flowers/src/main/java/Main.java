@@ -15,10 +15,8 @@ public class Main {
 
 		Bouquet bouquet = new Bouquet();
 		Flower firstFlower = new Flower(FlowerType.Monocolor, true, false);
-
 		bouquet.addFlowers(firstFlower);
 		bouquet.addFlowers(new Flower(FlowerType.Multicolor, false, true));
-
 		Accessory accessory = new Accessory();
 		accessory.setAccessoryType(AccessoryType.Wrapper);
 		bouquet.setBouquetForm(BouquetForm.MiddleStem);
@@ -27,7 +25,6 @@ public class Main {
 		bouquet.addAccessories(accessory);
 		bouquet.setBouquetPrice(BouquetPrice.Expensive);
 		bouquet.setBouquetSize(BouquetSize.Large);
-		
 		System.out.println(bouquet.toString());
 	}
 }
