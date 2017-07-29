@@ -6,7 +6,6 @@ public class Address {
 	private String street;
 	private String houseNumber;
 	private String flatNumber;
-	private String fullAddress;
 
 	public String getPostIndex() {
 		return postIndex;
@@ -49,10 +48,10 @@ public class Address {
 	}
 
 	public String getFullAddress() {
-		return fullAddress;
-	}
-
-	public void setFullAddress(String fullAddress) {
-		this.fullAddress = fullAddress;
+		return "index: " + getPostIndex() 
+				+", city: "+ getCity() 
+				+", street: " + getStreet() 
+				+ ", " + getHouseNumber() 
+				+ ", flat number: " + getFlatNumber();
 	}
 }

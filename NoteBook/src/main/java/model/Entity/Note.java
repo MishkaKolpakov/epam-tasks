@@ -1,21 +1,42 @@
 package model.Entity;
 
+import java.util.Date;
+
 public class Note {
-	
+
 	private String lastName;
 	private String firstName;
 	private String middleName;
 	private String lastNameFirstnameIntitial;
 	private String nickName;
 	private String commentary;
-	private Group group;
 	private String homePhoneNumber;
 	private String mobilePhoneNumber;
 	private String alternativephoneNumber;
 	private String email;
 	private String skype;
 	private Address address;
-	
+	private String group;
+	private String createdDate;
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	private Date modifiedDate;
+
 	public Address getAddress() {
 		return address;
 	}
@@ -75,11 +96,11 @@ public class Note {
 		this.commentary = commentary;
 	}
 
-	public Group getGroup() {
+	public String getGroup() {
 		return group;
 	}
 
-	public void setGroup(Group group) {
+	public void setGroup(String group) {
 		this.group = group;
 	}
 
