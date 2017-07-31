@@ -3,6 +3,7 @@ package controller;
 import java.util.Map;
 import java.util.Scanner;
 
+import exceptions.UniqueNicknameException;
 import model.Model;
 import view.View;
 
@@ -49,7 +50,7 @@ public class InputScanner {
 		}
 	}
 
-	public void inputEngine(Scanner scanner, InviteRegexMap irm) {
+	public void inputEngine(Scanner scanner, InviteRegexMap irm) throws UniqueNicknameException {
 		int i = 0;
 		irm.inviteRegexSaver();
 

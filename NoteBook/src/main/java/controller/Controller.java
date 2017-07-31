@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import exceptions.UniqueNicknameException;
 import model.Model;
 import view.InvitationConstants;
 import view.View;
@@ -21,7 +22,11 @@ public class Controller {
 		InviteRegexMap irm = new InviteRegexMap();
 		InputScanner inputScanner = new InputScanner(view, model);
 		do {
-			inputScanner.inputEngine(scanner, irm);
+			try{
+				inputScanner.inputEngine(scanner, irm);
+			}catch (UniqueNicknameException e) {
+				System.out.println("Exception");
+			}
 		} while (model.tryAgain(inputScanner.userTryAgain(scanner, InvitationConstants.CONTINUE_INPUT)));
 
 		view.displayNotes(model);

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import exceptions.UniqueNicknameException;
 import model.Entity.Address;
 import model.Entity.Note;
 
@@ -15,7 +16,7 @@ public class Model {
 		return noteBook;
 	}
 
-	public void setUserData(int index, String input) {
+	public void setUserData(int index, String input) throws UniqueNicknameException {
 		switch (index) {
 		case 0:
 			note = new Note();
@@ -29,7 +30,11 @@ public class Model {
 			note.setMiddleName(input);
 			break;
 		case 3:
-			note.setNickName(input);
+			if (input.equals("misha"))
+				throw new UniqueNicknameException();
+			else {
+				note.setNickName(input);
+			}
 			break;
 		case 4:
 			note.setCommentary(input);
