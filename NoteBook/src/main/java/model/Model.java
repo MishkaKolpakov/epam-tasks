@@ -1,17 +1,25 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import model.Entity.Address;
 import model.Entity.Note;
 
 public class Model {
-	Note note = new Note();
-	Address address = new Address();
+	private Note note;
+	private Address address;
+	private ArrayList<Note> noteBook = new ArrayList<>();
+
+	public ArrayList<Note> getNoteBook() {
+		return noteBook;
+	}
 
 	public void setUserData(int index, String input) {
 		switch (index) {
 		case 0:
+			note = new Note();
+			address = new Address();
 			note.setLastName(input);
 			break;
 		case 1:
@@ -58,10 +66,23 @@ public class Model {
 			break;
 		case 15:
 			address.setFlatNumber(input);
-			note.setCreatedDate(new Date().toString());
+			note.setCreatedDate(new Date());
 			note.setAddress(address);
+			noteBook.add(note);
 			break;
 		}
+	}
+
+	public boolean checkTryAgainInput(String input) {
+		return (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y") || input.toLowerCase().equals("no")
+				|| input.toLowerCase().equals("n"));
+	}
+
+	public boolean tryAgain(String input) {
+		if (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y"))
+			return true;
+		else
+			return false;
 	}
 
 }

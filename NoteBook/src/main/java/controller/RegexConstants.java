@@ -10,7 +10,7 @@ public interface RegexConstants {
 	String COMMENTARIES = "^.*$";
 	String SKYPE = "^[0-9a-zA-Z-_]+$";
 	String POST_INDEX = "\\d{4}";
-	String CITY = "^\\w{1,4}$";
+	String CITY = "^[A-Z]{1}[a-zA-Z]+$";
 	String GROUP = "All|Friends|Family|Colleagues";
 	String STREET = "^[A-Z]{1}[a-zA-Z]+$";
 	String HOUSE_NUMBER = "\\d{1,3}";

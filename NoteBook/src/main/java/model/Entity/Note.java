@@ -17,13 +17,14 @@ public class Note {
 	private String skype;
 	private Address address;
 	private String group;
-	private String createdDate;
+	private Date createdDate;
+	private Date modifiedDate;
 
 	public String getCreatedDate() {
-		return createdDate;
+		return createdDate.toString();
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 
@@ -35,8 +36,6 @@ public class Note {
 		this.modifiedDate = modifiedDate;
 	}
 
-	private Date modifiedDate;
-
 	public Address getAddress() {
 		return address;
 	}
@@ -44,9 +43,6 @@ public class Note {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
-	private String dateNoteFirstAdded;
-	private String dateNoteLastModified;
 
 	public String getLastName() {
 		return lastName;
@@ -144,19 +140,4 @@ public class Note {
 		this.skype = skype;
 	}
 
-	public String getDateNoteFirstAdded() {
-		return dateNoteFirstAdded;
-	}
-
-	public void setDateNoteFirstAdded(String dateNoteFirstAdded) {
-		this.dateNoteFirstAdded = dateNoteFirstAdded;
-	}
-
-	public String getDateNoteLastModified() {
-		return dateNoteLastModified;
-	}
-
-	public void setDateNoteLastModified(String dateNoteLastModified) {
-		this.dateNoteLastModified = dateNoteLastModified;
-	}
 }

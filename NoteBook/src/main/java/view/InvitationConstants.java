@@ -17,5 +17,5 @@ public interface InvitationConstants {
 	String ALTERNATIVE_PHONE = "Input your alternative mobile number.(\"Empty or such as an example +38067-363-74-60\")";
 	String EMAIL = "Input your email.(\"Starts from character, than could be combintation of characters and digits\")";
 	String SKYPE = "Input your skype login.(\"Characters lower and uppercase and digits\")";
-
+	String CONTINUE_INPUT = "Input [Yes/y] if you want to continue, [No/n] if you want to stop";
 }

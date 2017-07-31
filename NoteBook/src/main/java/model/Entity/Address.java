@@ -48,10 +48,7 @@ public class Address {
 	}
 
 	public String getFullAddress() {
-		return "index: " + getPostIndex() 
-				+", city: "+ getCity() 
-				+", street: " + getStreet() 
-				+ ", " + getHouseNumber() 
-				+ ", flat number: " + getFlatNumber();
+		return "index: " + getPostIndex() + ", city: " + getCity() + ", street: " + getStreet() + ", "
+				+ getHouseNumber() + ", flat number: " + getFlatNumber();
 	}
 }

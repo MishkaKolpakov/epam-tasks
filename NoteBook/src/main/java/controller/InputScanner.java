@@ -15,7 +15,7 @@ public class InputScanner {
 		this.model = model;
 	}
 
-	private boolean regexCheck(String input, String regex) {
+	public static boolean regexCheck(String input, String regex) {
 		return input.matches(regex);
 	}
 
@@ -34,10 +34,29 @@ public class InputScanner {
 		}
 	}
 
+	public String userTryAgain(Scanner scanner, String invitation) {
+		view.displayMessage(invitation);
+		String input;
+		while (true) {
+			input = scanner.nextLine();
+			if (model.checkTryAgainInput(input)) {
+				return input;
+			} else {
+				view.displayMessage(View.WRONG_TRY_AGAIN_INPUT);
+				view.displayMessage(invitation);
+				continue;
+			}
+		}
+	}
+
 	public void inputEngine(Scanner scanner, InviteRegexMap irm) {
+		int i = 0;
 		irm.inviteRegexSaver();
-		for (Map.Entry<String, String> m : irm.inviteRegex.entrySet())
-			userDataInput(scanner, m.getKey(), m.getValue());
+
+		for (Map.Entry<String, String> m : irm.inviteRegex.entrySet()) {
+			model.setUserData(i, userDataInput(scanner, m.getKey(), m.getValue()));
+			i++;
+		}
 
 	}
 

@@ -3,6 +3,7 @@ package controller;
 import java.util.Scanner;
 
 import model.Model;
+import view.InvitationConstants;
 import view.View;
 
 public class Controller {
@@ -19,6 +20,10 @@ public class Controller {
 		Scanner scanner = new Scanner(System.in);
 		InviteRegexMap irm = new InviteRegexMap();
 		InputScanner inputScanner = new InputScanner(view, model);
-		inputScanner.inputEngine(scanner, irm);
+		do {
+			inputScanner.inputEngine(scanner, irm);
+		} while (model.tryAgain(inputScanner.userTryAgain(scanner, InvitationConstants.CONTINUE_INPUT)));
+
+		view.displayNotes(model);
 	}
 }
