@@ -11,6 +11,7 @@ public class Model {
 	private Note note;
 	private Address address;
 	private ArrayList<Note> noteBook = new ArrayList<>();
+	private StringBuffer sb;
 
 	public ArrayList<Note> getNoteBook() {
 		return noteBook;
@@ -88,6 +89,17 @@ public class Model {
 			return true;
 		else
 			return false;
+	}
+
+	public String prepareOutput(Note note) {
+		sb = new StringBuffer();
+		return sb.append("\n").append(note.getLastName()).append(" ").append(note.getFirstName().charAt(0)).append(".")
+				.append(" Nickname: ").append(note.getNickName()).append("\nCommentary: ").append(note.getCommentary())
+				.append("\nHome phone number: ").append(note.getHomePhoneNumber()).append("\nMobile phone number: ")
+				.append(note.getMobilePhoneNumber()).append("\nAlternative number: ")
+				.append(note.getAlternativephoneNumber()).append("\nEmail: ").append(note.getEmail())
+				.append("\nSkype: ").append(note.getSkype()).append("\nAddress: ")
+				.append(note.getAddress().getFullAddress()).append("\n").append(note.getCreatedDate()).toString();
 	}
 
 }

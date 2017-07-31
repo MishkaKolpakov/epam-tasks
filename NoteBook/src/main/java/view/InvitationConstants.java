@@ -1,6 +1,7 @@
 package view;
 
 public interface InvitationConstants {
+	// String invitation constants + Exception constant
 	String FIRST_NAME = "Input your first name. (\"First character uppercase, others lowercase\")";
 	String LAST_NAME = "Input your last name. (\"First character uppercase, others lowercase\")";
 	String MIDDLE_NAME = "Input your middle name.(\"First character uppercase, others lowercase\")";
@@ -18,4 +19,5 @@ public interface InvitationConstants {
 	String EMAIL = "Input your email.(\"Starts from character, than could be combintation of characters and digits\")";
 	String SKYPE = "Input your skype login.(\"Characters lower and uppercase and digits\")";
 	String CONTINUE_INPUT = "Input [Yes/y] if you want to continue, [No/n] if you want to stop";
+	String UNIQUE_NAME_EXCEPTION = "Nickname already exsists.";
 }
