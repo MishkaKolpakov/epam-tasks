@@ -1,6 +1,7 @@
 package controller;
 
 public interface RegexConstants {
+	//String regular expressions constants initialization
 	String NAME = "^[A-Z]{1}[a-z]{1,20}$";
 	String EMAIL = "^[a-zA-Z]+[a-zA-Z_-]\\d*@[a-z]{2,8}\\.[a-z]{2,3}$";
 	String NICKNAME = "^[a-zA-Z0-9]{3,16}$";

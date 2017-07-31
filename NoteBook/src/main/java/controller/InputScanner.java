@@ -18,15 +18,23 @@ public class InputScanner {
 	}
 
 	/**
-     * Check the regex and input
-     * return true if matche and false if not
-     * @param input, value
-     * @return boolean
-     */
+	 * Check the regex and input return true if matches and false if not
+	 * 
+	 * @param input,
+	 *            value
+	 * @return boolean
+	 */
 	public static boolean regexCheck(String input, String regex) {
 		return input.matches(regex);
 	}
 
+	/**
+	 * Input user data scanner return input if it matches regular expression
+	 * 
+	 * @param scanner,
+	 *            invitation, regex
+	 * @return input
+	 */
 	public String userDataInput(Scanner scanner, String invitation, String regex) {
 		view.displayMessage(invitation);
 		String input;
@@ -42,7 +50,13 @@ public class InputScanner {
 		}
 	}
 
-	
+	/**
+	 * Input user continue input scanner return input it matches yes or no
+	 * 
+	 * @param scanner,
+	 *            invitation
+	 * @return input
+	 */
 	public String userTryAgain(Scanner scanner, String invitation) {
 		view.displayMessage(invitation);
 		String input;
@@ -58,6 +72,14 @@ public class InputScanner {
 		}
 	}
 
+	/**
+	 * Calls the userDataInput method using for each loop to make sequence of input
+	 * one after other
+	 * 
+	 * @param scanner,
+	 *            inviteRegexMap
+	 * @throws UniqueNicknameException
+	 */
 	public void inputEngine(Scanner scanner, InviteRegexMap irm) throws UniqueNicknameException {
 		int i = 0;
 		irm.inviteRegexSaver();

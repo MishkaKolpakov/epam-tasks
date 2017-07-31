@@ -16,7 +16,7 @@ public class View {
 	//Output all the notes
 	public void displayNotes(Model model) {
 		for (Note note : model.getNoteBook()) {
-			displayMessage(model.output(note));
+			displayMessage(model.prepareOutput(note));
 		}
 	}
 }

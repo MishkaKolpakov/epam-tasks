@@ -8,6 +8,11 @@ import view.InvitationConstants;
 public class InviteRegexMap {
 	Map<String, String> inviteRegex = new LinkedHashMap<>();
 
+	/**
+	 * Method that`s save to the linked hash map pair of invitation and regular
+	 * expression constants
+	 * 
+	 */
 	public void inviteRegexSaver() {
 		inviteRegex.put(InvitationConstants.LAST_NAME, RegexConstants.NAME);
 		inviteRegex.put(InvitationConstants.FIRST_NAME, RegexConstants.NAME);

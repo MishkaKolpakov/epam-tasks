@@ -17,6 +17,13 @@ public class Model {
 		return noteBook;
 	}
 
+	/**
+	 * Method setting all the input data and save it to array list
+	 * 
+	 * @param index
+	 * @param input
+	 * @throws UniqueNicknameException
+	 */
 	public void setUserData(int index, String input) throws UniqueNicknameException {
 		switch (index) {
 		case 0:
@@ -79,11 +86,23 @@ public class Model {
 		}
 	}
 
+	/**
+	 * Checks if inputed data matches yes, y, no, n
+	 * 
+	 * @param input
+	 * @return booleanValue
+	 */
 	public boolean checkTryAgainInput(String input) {
 		return (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y") || input.toLowerCase().equals("no")
 				|| input.toLowerCase().equals("n"));
 	}
 
+	/**
+	 * Method return true if entered word yes, false if no
+	 * 
+	 * @param input
+	 * @return booleanValue
+	 */
 	public boolean tryAgain(String input) {
 		if (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y"))
 			return true;
@@ -91,6 +110,12 @@ public class Model {
 			return false;
 	}
 
+	/**
+	 * Method preparing the output in readable form
+	 * 
+	 * @param note
+	 * @return stringValue
+	 */
 	public String prepareOutput(Note note) {
 		sb = new StringBuffer();
 		return sb.append("\n").append(note.getLastName()).append(" ").append(note.getFirstName().charAt(0)).append(".")
