@@ -95,20 +95,19 @@ class RuTouchpad implements Touchpad {
 class EnMouse implements Mouse {
 	@Override
 	public void click() {
-		System.out.println("Mouse click");// TODO Auto-generated method stub
+		System.out.println("Mouse click");
 
 	}
 
 	@Override
 	public void doubleClick() {
-		System.out.println("Double mouse click");// TODO Auto-generated method stub
+		System.out.println("Double mouse click");
 
 	}
 
 	@Override
 	public void scroll() {
-		System.out.println("Mouse scroll");// TODO Auto-generated method stub
-
+		System.out.println("Mouse scroll");
 	}
 
 }
@@ -117,13 +116,13 @@ class EnKeyboard implements Keyboard {
 
 	@Override
 	public void print() {
-		System.out.println("Print row!");// TODO Auto-generated method stub
+		System.out.println("Print row!");
 
 	}
 
 	@Override
 	public void println() {
-		System.out.println("Print row and \"\n\"!");// TODO Auto-generated method stub
+		System.out.println("Print row and \"\n\"!");
 
 	}
 
@@ -133,7 +132,7 @@ class EnTouchpad implements Touchpad {
 
 	@Override
 	public void track(int deltaX, int deltaY) {
-		int i = (int) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)); // TODO Auto-generated method stub
+		int i = (int) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
 		System.out.println("Move the mouse on " + i + " pixels");
 	}
 
