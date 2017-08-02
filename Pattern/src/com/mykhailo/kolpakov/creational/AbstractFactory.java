@@ -48,19 +48,19 @@ class RuMouse implements Mouse {
 
 	@Override
 	public void click() {
-		System.out.println("Клик мышью");// TODO Auto-generated method stub
+		System.out.println("Клик мышью");
 
 	}
 
 	@Override
 	public void doubleClick() {
-		System.out.println("Двойной клик мышью");// TODO Auto-generated method stub
+		System.out.println("Двойной клик мышью");
 
 	}
 
 	@Override
 	public void scroll() {
-		System.out.println("Колесеко мышки");// TODO Auto-generated method stub
+		System.out.println("Колесеко мышки");
 
 	}
 
@@ -70,13 +70,13 @@ class RuKeyboard implements Keyboard {
 
 	@Override
 	public void print() {
-		System.out.println("Печать строки!");// TODO Auto-generated method stub
+		System.out.println("Печать строки!");
 
 	}
 
 	@Override
 	public void println() {
-		System.out.println("Печать строки с переводом строки!");// TODO Auto-generated method stub
+		System.out.println("Печать строки с переводом строки!");
 
 	}
 
@@ -86,14 +86,13 @@ class RuTouchpad implements Touchpad {
 
 	@Override
 	public void track(int deltaX, int deltaY) {
-		int i = (int) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2)); // TODO Auto-generated method stub
+		int i = (int) Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
 		System.out.println("Передвижение на " + i + " пикселей");
 	}
 
 }
 
 class EnMouse implements Mouse {
-
 	@Override
 	public void click() {
 		System.out.println("Mouse click");// TODO Auto-generated method stub
