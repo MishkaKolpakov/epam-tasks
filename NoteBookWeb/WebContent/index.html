@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Notebook</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Notebook</h1>
+	<form method="POST" class="main_form" action="DataUtilServlet" name="noteBook">
+		<label>Surname:</label>
+		<input type="text" name="lastName">
+		<label>First name:</label> 
+		<input type="text" name="firstName">
+		<label>Middle name:</label> 
+		<input type="text" name="middleName">
+		<label>Nick:</label> 
+		<input type="text" name="nickName">
+		<label>Comments:</label>
+		<textarea form="noteBook" name="commentary"></textarea>
+		<label>Group: </label>
+		<select name="group" form="noteBook">
+			<option value="All">All</option>
+			<option value="Friends">Friends</option>
+			<option value="Family">Family</option>
+			<option value="Colleagues">Colleagues</option>
+		</select>
+		<label>Home phone:</label> 
+		<input type="text" name="homePhone">
+		<label>Mobile phone:</label> 
+		<input type="text" name="mobilePhone">
+		<label>	Mobile phone 2:</label> 
+		<input type="text" name="alternativePhone">
+		<label>	E-mail:</label> 
+		<input type="text" name="email">
+		<label>	Skype:</label> 
+		<input type="text" name="skype">
+		<input type="submit" value="Save">
+	</form>
+</body>
+</html>
