@@ -9,13 +9,24 @@ public class ChainOfResponsibility {
 		smsLogger.writeMessage("Error", Level.ERROR);
 		smsLogger.writeMessage("Debug", Level.DEBUG);
 		
-		NoteModule noteModule500 = new NoteModule500();
+		/*NoteModule noteModule500 = new NoteModule500();
 		NoteModule noteModule200 = new NoteModule200();
 		NoteModule noteModule100 = new NoteModule100();
 		NoteModule noteModule50 = new NoteModule50();
 		
 		noteModule500.setNextModule(noteModule200);
 		noteModule200.setNextModule(noteModule100);
+		noteModule100.setNextModule(noteModule50);
+		
+		noteModule500.takeMoney(new Money(2400));*/
+		
+		NoteModule noteModule500 = new NoteModule500();
+		//NoteModule noteModule200 = new NoteModule200();
+		NoteModule noteModule100 = new NoteModule100();
+		NoteModule noteModule50 = new NoteModule50();
+		
+		noteModule500.setNextModule(noteModule100);
+		//noteModule200.setNextModule(noteModule100);
 		noteModule100.setNextModule(noteModule50);
 		
 		noteModule500.takeMoney(new Money(2400));
