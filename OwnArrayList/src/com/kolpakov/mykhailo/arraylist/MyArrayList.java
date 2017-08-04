@@ -5,6 +5,9 @@ import java.util.Collection;
 import java.util.function.Predicate;
 
 public class MyArrayList<E> extends ArrayList<E> {
+
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public E remove(int index) {
 		System.out.println("remove operation unsupported");
