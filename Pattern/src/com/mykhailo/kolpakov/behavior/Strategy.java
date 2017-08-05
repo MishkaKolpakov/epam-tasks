@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class Strategy {
 	public static void main(String[] args) {
-		
+
 		ClientStrategy clientStrategy = new ClientStrategy();
 		Sorting strategy = new BubbleSort();
-		
+
 		int arr[] = new int[10];
-		for(int i = 0; i < 10; i++) {
-			arr[i] = (int) (Math.random()*100);
+		for (int i = 0; i < 10; i++) {
+			arr[i] = (int) (Math.random() * 100);
 		}
 		clientStrategy.setStrategy(strategy);
 		clientStrategy.executeStrategy(arr);
-		
+
 		strategy = new SelectionSort();
 		clientStrategy.setStrategy(strategy);
 		clientStrategy.executeStrategy(arr);
-		
+
 	}
 }
 
@@ -64,7 +64,7 @@ class SelectionSort implements Sorting {
 		System.out.println("Selection sort");
 		System.out.println("before sorting: " + Arrays.toString(arr));
 		int i, j;
-		for (i = 0; i < arr.length-1 ; i++)
+		for (i = 0; i < arr.length - 1; i++)
 			for (j = i + 1; j < arr.length; j++) {
 				if (arr[i] > arr[j]) {
 					int tmp = arr[i];
