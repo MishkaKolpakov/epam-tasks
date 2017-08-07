@@ -12,6 +12,7 @@ public class Model {
 	private Address address;
 	private ArrayList<Note> noteBook = new ArrayList<>();
 	private StringBuffer sb;
+	private boolean tryAgain;
 
 	public ArrayList<Note> getNoteBook() {
 		return noteBook;
@@ -83,18 +84,18 @@ public class Model {
 			note.setAddress(address);
 			noteBook.add(note);
 			break;
+		case 16:
+			setTryAgain(tryAgain(input));
+			break;
 		}
 	}
 
-	/**
-	 * Checks if inputed data matches yes, y, no, n
-	 * 
-	 * @param input
-	 * @return booleanValue
-	 */
-	public boolean checkTryAgainInput(String input) {
-		return (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y") || input.toLowerCase().equals("no")
-				|| input.toLowerCase().equals("n"));
+	public boolean isTryAgain() {
+		return tryAgain;
+	}
+
+	public void setTryAgain(boolean tryAgain) {
+		this.tryAgain = tryAgain;
 	}
 
 	/**
@@ -106,8 +107,10 @@ public class Model {
 	public boolean tryAgain(String input) {
 		if (input.toLowerCase().equals("yes") || input.toLowerCase().equals("y"))
 			return true;
-		else
+		else if (input.toLowerCase().equals("no") || input.toLowerCase().equals("n")) {
 			return false;
+		}
+		return false;
 	}
 
 	/**

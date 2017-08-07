@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import exceptions.UniqueNicknameException;
 import model.Model;
+import view.StringConstants;
 import view.View;
 
 public class InputScanner {
@@ -43,29 +44,7 @@ public class InputScanner {
 			if (regexCheck(input, regex)) {
 				return input;
 			} else {
-				view.displayMessage(View.WRONG_INPUT);
-				view.displayMessage(invitation);
-				continue;
-			}
-		}
-	}
-
-	/**
-	 * Input user continue input scanner return input it matches yes or no
-	 * 
-	 * @param scanner,
-	 *            invitation
-	 * @return input
-	 */
-	public String userTryAgain(Scanner scanner, String invitation) {
-		view.displayMessage(invitation);
-		String input;
-		while (true) {
-			input = scanner.nextLine();
-			if (model.checkTryAgainInput(input)) {
-				return input;
-			} else {
-				view.displayMessage(View.WRONG_TRY_AGAIN_INPUT);
+				view.displayMessage(StringConstants.WRONG_INPUT);
 				view.displayMessage(invitation);
 				continue;
 			}
