@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class FifthTask {
+public class SaladBuilder {
 	public static void main(String[] args) {
 		Salad salad = new Salad.SaladBuilder(Vegatables.CABBAGE, Vegatables.TOMATO)
 				.addSauce(Sauce.MUSHROOM)

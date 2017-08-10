@@ -1,5 +1,5 @@
 
-public class FirstTask {
+public class StateApp {
 	public static void main(String[] args) {
 		Human human = new Human();
 		human.setState(new StayOnBeach());
