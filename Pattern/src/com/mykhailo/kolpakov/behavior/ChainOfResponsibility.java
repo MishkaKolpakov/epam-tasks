@@ -8,7 +8,7 @@ public class ChainOfResponsibility {
 		smsLogger.setNext(fileLogger);
 		smsLogger.writeMessage("Error", Level.ERROR);
 		smsLogger.writeMessage("Debug", Level.DEBUG);
-		
+	
 		/*NoteModule noteModule500 = new NoteModule500();
 		NoteModule noteModule200 = new NoteModule200();
 		NoteModule noteModule100 = new NoteModule100();
