@@ -8,30 +8,30 @@ public class ChainOfResponsibility {
 		smsLogger.setNext(fileLogger);
 		smsLogger.writeMessage("Error", Level.ERROR);
 		smsLogger.writeMessage("Debug", Level.DEBUG);
-	
-		/*NoteModule noteModule500 = new NoteModule500();
-		NoteModule noteModule200 = new NoteModule200();
-		NoteModule noteModule100 = new NoteModule100();
-		NoteModule noteModule50 = new NoteModule50();
-		
-		noteModule500.setNextModule(noteModule200);
-		noteModule200.setNextModule(noteModule100);
-		noteModule100.setNextModule(noteModule50);
-		
-		noteModule500.takeMoney(new Money(2400));*/
-		
+
+		/*
+		 * NoteModule noteModule500 = new NoteModule500(); NoteModule noteModule200 =
+		 * new NoteModule200(); NoteModule noteModule100 = new NoteModule100();
+		 * NoteModule noteModule50 = new NoteModule50();
+		 * 
+		 * noteModule500.setNextModule(noteModule200);
+		 * noteModule200.setNextModule(noteModule100);
+		 * noteModule100.setNextModule(noteModule50);
+		 * 
+		 * noteModule500.takeMoney(new Money(2400));
+		 */
+
 		NoteModule noteModule500 = new NoteModule500();
-		//NoteModule noteModule200 = new NoteModule200();
+		// NoteModule noteModule200 = new NoteModule200();
 		NoteModule noteModule100 = new NoteModule100();
 		NoteModule noteModule50 = new NoteModule50();
-		
+
 		noteModule500.setNextModule(noteModule100);
-		//noteModule200.setNextModule(noteModule100);
+		// noteModule200.setNextModule(noteModule100);
 		noteModule100.setNextModule(noteModule50);
-		
+
 		noteModule500.takeMoney(new Money(2400));
-		
-		
+
 	}
 }
 
@@ -173,8 +173,7 @@ class SMSLogger extends Logger {
 
 	@Override
 	void write(String message) {
-		System.out.println("SMS: " + message);// TODO Auto-generated method stub
-
+		System.out.println("SMS: " + message);
 	}
 
 }
@@ -186,8 +185,7 @@ class FileLogger extends Logger {
 
 	@Override
 	void write(String message) {
-		System.out.println("File: " + message);// TODO Auto-generated method stub
-
+		System.out.println("File: " + message);
 	}
 
 }
