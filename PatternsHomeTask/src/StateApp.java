@@ -1,10 +1,13 @@
 
 public class StateApp {
 	public static void main(String[] args) {
-		Human human = new Human();
-		human.setState(new StayOnBeach());
+		Human human = new Human(new StayOnBeach());
 		human.doAction();
-		human.setState(new SeeAnimal());
+		human.changeState();
+		human.doAction();
+		human.changeState();
+		human.doAction();
+		human.changeState();
 		human.doAction();
 	}
 }
@@ -41,8 +44,22 @@ class Human {
 
 	private State state;
 
-	public void setState(State state) {
+	public Human(State state) {
 		this.state = state;
+	}
+
+	private void setState(State state) {
+		this.state = state;
+	}
+
+	public void changeState() {
+		if (state instanceof StayOnBeach) {
+			setState(new StayOnMushroomField());
+		} else if (state instanceof StayOnMushroomField) {
+			setState(new SeeAnimal());
+		} else if (state instanceof SeeAnimal) {
+			setState(new StayOnBeach());
+		}
 	}
 
 	public void doAction() {
