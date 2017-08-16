@@ -1,4 +1,4 @@
-package view;
+package view.constants;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

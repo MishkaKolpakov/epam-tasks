@@ -2,7 +2,7 @@ package controller;
 
 import java.util.Scanner;
 import model.derivative.Derivative;
-import model.derivative.DerivativeService;
+import model.derivative.DerivativeUtil;
 import view.View;
 
 public class Controller {
@@ -16,9 +16,9 @@ public class Controller {
 
 	public void applicationEngine() {
 		Scanner scanner = new Scanner(System.in);
-		DerivativeService derivativeService = new DerivativeService(derivative);
+		DerivativeUtil derivativeUtil = new DerivativeUtil(derivative);
 		InputScanner inputScanner = new InputScanner(view, scanner);
-		Menu menu = new Menu(derivativeService, inputScanner, view);
+		Menu menu = new Menu(derivativeUtil, inputScanner, view);
 		menu.menuContext();
 	}
 }

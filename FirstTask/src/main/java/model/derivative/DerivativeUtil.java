@@ -7,11 +7,11 @@ import java.util.List;
 import model.comparators.RiskLevelComparator;
 import model.entities.responsibilities.Responsibility;
 
-public class DerivativeService {
+public class DerivativeUtil {
 	List<Responsibility> responsibilities;
 	Derivative derivative;
 
-	public DerivativeService(Derivative derivative) {
+	public DerivativeUtil(Derivative derivative) {
 		this.responsibilities = derivative.getDerivative();
 		this.derivative = derivative;
 	}

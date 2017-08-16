@@ -1,12 +1,13 @@
 package view;
 
 import java.util.List;
-import model.derivative.DerivativeService;
+import model.derivative.DerivativeUtil;
 import model.entities.responsibilities.Responsibility;
 import model.entities.responsibilities.individual.IndividualResponsibilitiesList;
 import model.entities.responsibilities.individual.IndividualResponsibility;
 import model.entities.responsibilities.property.PropertyResponsibilitiesList;
 import model.entities.responsibilities.property.PropertyResponsibility;
+import view.constants.StringConstants;
 
 public class View {
 
@@ -40,10 +41,10 @@ public class View {
 		}
 	}
 
-	public void displayDerivative(DerivativeService derivativeService) {
-		displayDerivativeList(derivativeService.getDerivative().getAvailablePropertyResponsibilities());
-		displayDerivativeList(derivativeService.getDerivative().getIndividualResponsibilitiesList());
-		displayMessage(StringConstants.SUMMARY_PRICE + derivativeService.summaryPrice() + StringConstants.CURRENCY);
+	public void displayDerivative(DerivativeUtil derivativeUtil) {
+		displayDerivativeList(derivativeUtil.getDerivative().getAvailablePropertyResponsibilities());
+		displayDerivativeList(derivativeUtil.getDerivative().getIndividualResponsibilitiesList());
+		displayMessage(StringConstants.SUMMARY_PRICE + derivativeUtil.summaryPrice() + StringConstants.CURRENCY);
 		displayMessage("");
 
 	}

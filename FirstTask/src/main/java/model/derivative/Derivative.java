@@ -30,7 +30,7 @@ public class Derivative {
 		this.title = title;
 	}
 
-	public void createDerivative() {
+	private void createDerivative() {
 		responsibilities = new LinkedList<>();
 		fillDerivative();
 	}
