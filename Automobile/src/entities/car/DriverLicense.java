@@ -1,6 +1,7 @@
 package entities.car;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DriverLicense {
@@ -20,7 +21,8 @@ public class DriverLicense {
 	}
 
 	public DriverLicense(Category category, LocalDate startLicenseDate, LocalDate endLicenseDate) {
-		this.categories.add(category);
+		this.categories = new ArrayList<DriverLicense.Category>();
+		categories.add(category);
 		this.startLicenseDate = startLicenseDate;
 		this.endLicenseDate = endLicenseDate;
 	}

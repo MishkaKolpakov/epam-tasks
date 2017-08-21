@@ -1,10 +1,11 @@
 package entities.car;
 
 import entities.details.Motor;
+
 import entities.details.Chassis;
 
 public class Car {
-	enum MarkType {
+	public enum MarkType {
 		Audi, Porsche, Mazda
 	};
 
@@ -13,11 +14,11 @@ public class Car {
 	MarkType mark;
 	DriverLicense.Category category;
 
-	public Car(Chassis chassis, Motor motor, MarkType mark, DriverLicense.Category category) {
-		this.chassis = chassis;
-		this.motor = motor;
-		this.mark = mark;
-		this.category = category;
+	public Car(CarBuilder carBuilder) {
+		this.chassis = carBuilder.getChassis();
+		this.motor = carBuilder.getMotor();
+		this.mark = carBuilder.getMark();
+		this.category = carBuilder.getCategory();
 	}
 
 	public Chassis getChassis() {

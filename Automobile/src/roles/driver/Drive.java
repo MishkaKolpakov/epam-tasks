@@ -1,5 +1,7 @@
 package roles.driver;
 
+import entities.car.Car;
+
 public interface Drive {
-	void drive();
+	void drive(Car car);
 }

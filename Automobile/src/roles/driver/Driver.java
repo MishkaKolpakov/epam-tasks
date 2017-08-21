@@ -8,12 +8,11 @@ import roles.driver.Drive;
 public class Driver implements Drive {
 	Human human;
 	DriverLicense driverLicense;
-	Car car;
 
 	Driver(DriverBuilder driverBuilder) {
 		this.human = driverBuilder.getHuman();
 		this.driverLicense = driverBuilder.getDriverLicense();
-		this.car = driverBuilder.getCar();
+
 	}
 
 	public Human getHuman() {
@@ -32,16 +31,8 @@ public class Driver implements Drive {
 		this.driverLicense = driverLicense;
 	}
 
-	public Car getCar() {
-		return car;
-	}
-
-	public void setCar(Car car) {
-		this.car = car;
-	}
-
 	@Override
-	public void drive() {
+	public void drive(Car car) {
 		if (driverLicense.categories.contains(car.getCategory())) {
 			System.out.println("Driver is driving " + car);
 		} else {
