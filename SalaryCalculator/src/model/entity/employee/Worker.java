@@ -10,7 +10,7 @@ public class Worker implements EmployeeGettable {
 	private LocalDate hireJobDate;
 	private Long salaryRate;
 	private Long actualSalary;
-
+	
 	public Worker(WorkerBuilder workerBuilder) {
 		this.firstName = workerBuilder.getFirstName();
 		this.lastName = workerBuilder.getLastName();

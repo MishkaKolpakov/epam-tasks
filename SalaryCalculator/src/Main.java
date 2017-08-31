@@ -1,16 +1,17 @@
 import model.dao.EmployeeDB;
 import model.entity.employee.Worker;
-import model.service.count.ActualSalaryDistributable;
-import model.service.count.ActualSalaryDistributer;
+import model.service.sort.LastNameSorter;
+import model.service.sort.Sortable;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ActualSalaryDistributable actualSalaryDistributer = new ActualSalaryDistributer();
 		EmployeeDB employeeDB = new EmployeeDB();
-		actualSalaryDistributer.distributeRest(50000L, employeeDB.getEmployees());
-		for (Worker worker : employeeDB.getEmployees()) {
-			System.out.println(worker.getLastName() + " " + worker.getActualSalary());
+
+		Sortable sorter = new LastNameSorter();
+		
+		for (Worker worker : sorter.sort(employeeDB.getWorkers())) {
+			System.out.println(worker.getLastName() + " " + worker.getHireJobDate());
 		}
 	}
 }

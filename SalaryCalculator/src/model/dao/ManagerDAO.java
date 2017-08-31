@@ -42,4 +42,6 @@ public class ManagerDAO extends ArrayList<Manager> implements ManagerSearchable 
 		}
 		return null;
 	}
+	
+	
 }

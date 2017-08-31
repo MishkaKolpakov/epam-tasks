@@ -30,11 +30,6 @@ public class WorkerBuilder {
 		return this;
 	}
 
-	public WorkerBuilder setFirstName(LocalDate hireJobDate) {
-		this.hireJobDate = hireJobDate;
-		return this;
-	}
-
 	public Worker buildWorker() {
 		return new Worker(this);
 	}

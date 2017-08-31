@@ -19,5 +19,4 @@ public class ProportionalStrategy implements RestStrategy {
 		}
 		return Double.valueOf(rest / salarySum);
 	}
-
 }
