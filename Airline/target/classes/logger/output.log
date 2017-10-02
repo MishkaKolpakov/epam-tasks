@@ -1,0 +1,231 @@
+2017-10-01 22:21:20 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-01 22:21:20 INFO  RegistrationCommand:33 - The user entered incorrect data during registration.
+2017-10-01 22:21:50 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-01 22:21:50 INFO  LoginCommand:46 - Successful log in as: USER
+2017-10-01 22:22:45 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-01 22:22:45 INFO  RegistrationCommand:33 - The user entered incorrect data during registration.
+2017-10-01 22:24:02 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-01 22:24:02 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-01 22:24:02 INFO  RegistrationCommand:33 - The user entered incorrect data during registration.
+2017-10-01 22:24:23 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-01 22:24:23 INFO  RegistrationCommand:33 - The user entered incorrect data during registration.
+2017-10-02 15:36:02 INFO  RegistrationCommand:29 - The user registered successfully.
+2017-10-02 15:36:02 INFO  RegistrationCommand:33 - The user entered incorrect data during registration.
+2017-10-02 15:43:27 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:43:28 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:43:33 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:43:33 INFO  LoginCommand:46 - Successful log in as: USER
+2017-10-02 15:43:35 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 15:43:35 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 15:43:36 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 15:44:04 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 15:44:04 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 15:44:05 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 15:44:09 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:44:09 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 15:44:09 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 15:44:09 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:44:09 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:44:10 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:44:10 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 15:44:10 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 15:44:11 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:44:11 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:44:12 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:44:12 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:44:13 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 15:44:13 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 15:44:14 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 15:44:14 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:44:14 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:44:21 INFO  JdbcFlightDao:167 - Find flight method was called
+2017-10-02 15:44:21 INFO  FindCommand:35 - User search flight only by direction.
+2017-10-02 15:44:21 INFO  FindCommand:44 - User got filtered information about flights.
+2017-10-02 15:50:58 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:50:58 INFO  LoginCommand:47 - Successful log in as: USER
+2017-10-02 15:51:00 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:51:00 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:51:01 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:01 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 15:51:01 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 15:51:03 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 15:51:03 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 15:51:04 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 15:51:05 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:51:05 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:51:05 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:05 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 15:51:05 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 15:51:11 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:11 INFO  LoginCommand:47 - Successful log in as: USER
+2017-10-02 15:51:15 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:51:19 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:19 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:51:25 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:25 INFO  LoginCommand:47 - Successful log in as: USER
+2017-10-02 15:51:27 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:51:27 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 15:51:27 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 15:51:27 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 15:51:27 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 15:51:28 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 15:51:28 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 15:51:28 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 15:52:15 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:52:19 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:52:19 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:18 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:18 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:18 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:18 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:22 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:54:27 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:27 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:29 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:54:29 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:54:33 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:33 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:46 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:54:50 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:50 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:54:52 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:54:56 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:54:56 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:56:54 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:56:54 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:56:55 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:57:00 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:57:00 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:57:01 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:57:04 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:57:04 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:57:37 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:57:39 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:57:47 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:57:47 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:57:48 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:57:52 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:57:52 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:57:59 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:57:59 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:58:01 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:58:05 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:58:05 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:58:06 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:58:10 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:58:10 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:58:14 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:58:14 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:59:08 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:59:08 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:59:09 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:59:15 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:59:15 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:59:17 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 15:59:20 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:59:20 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:59:24 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:59:24 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:59:27 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:59:27 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 15:59:29 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 15:59:33 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 15:59:33 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:00:56 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 16:00:57 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 16:01:01 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:01 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:06 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:06 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:08 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 16:01:13 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:13 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:18 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:18 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:20 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 16:01:23 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:23 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:28 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:28 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:01:28 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:01:28 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:02:37 INFO  LanguageCommand:19 - Language changed to en_US
+2017-10-02 16:02:42 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:02:42 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:02:43 INFO  LanguageCommand:19 - Language changed to ru_RU
+2017-10-02 16:02:46 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:02:46 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:02:50 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:02:50 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:04:30 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:32 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:33 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:34 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:39 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:04:39 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:04:40 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:44 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:04:44 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:04:45 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:49 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:04:49 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:04:50 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:04:53 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:04:53 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:05:53 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:05:57 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:05:57 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:01 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:01 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:02 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:06:05 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:05 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:09 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:09 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:38 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:06:42 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:42 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:48 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:48 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:06:49 INFO  LanguageCommand:20 - Language changed
+2017-10-02 16:06:54 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:06:54 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:08:27 INFO  LanguageCommand:21 - Language changed
+2017-10-02 16:08:31 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:08:31 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:08:32 INFO  LanguageCommand:21 - Language changed
+2017-10-02 16:08:35 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:08:35 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:09:06 INFO  LanguageCommand:21 - Language changed
+2017-10-02 16:09:09 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:09:09 WARN  LoginCommand:51 - Wrong login, password input.
+2017-10-02 16:09:16 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:09:16 INFO  LoginCommand:47 - Successful log in as: USER
+2017-10-02 16:09:17 INFO  JdbcUserDao:114 - Get user by email method was called
+2017-10-02 16:09:17 INFO  JdbcUserDao:162 - Get user by client id method was called
+2017-10-02 16:09:17 INFO  ProfileCommand:28 - User clicked profile menu item
+2017-10-02 16:09:17 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 16:09:17 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 16:09:21 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 16:09:21 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 16:09:22 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 16:09:22 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 16:09:23 INFO  AboutCommand:19 - User clicked contact us menu item
+2017-10-02 16:09:24 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 16:09:24 INFO  ShowOrderCommand:33 - User opened his order list, which is empty
+2017-10-02 16:09:25 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 16:09:25 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 16:09:26 INFO  JdbcFlightDao:167 - Find flight method was called
+2017-10-02 16:09:26 INFO  FindCommand:35 - User search flight only by direction.
+2017-10-02 16:09:26 INFO  FindCommand:44 - User got filtered information about flights.
+2017-10-02 16:09:28 INFO  TicketCommand:30 - User clicked on button that shows detail information about flight
+2017-10-02 16:09:32 INFO  OrderCommand:32 - User successfully ordered the ticket!
+2017-10-02 16:09:32 INFO  ShowOrderCommand:29 - User clicked order list menu item
+2017-10-02 16:09:36 INFO  BuyCommand:37 - User successfully bought ticket.
+2017-10-02 16:09:36 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-02 16:09:36 INFO  BuyCommand:44 - The ticket was deleted from client order
+2017-10-02 16:09:36 INFO  JdbcFlightDao:58 - Returned list of all flights
+2017-10-02 16:09:36 INFO  ServiceCommand:25 - User got all available flights
+2017-10-02 16:09:41 INFO  JdbcFlightDao:167 - Find flight method was called
+2017-10-02 16:09:41 INFO  FindCommand:35 - User search flight only by direction.
+2017-10-02 16:09:41 INFO  FindCommand:44 - User got filtered information about flights.
