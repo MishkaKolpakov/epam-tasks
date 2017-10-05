@@ -13,6 +13,8 @@ public abstract class DaoFactory {
 
 	public abstract FlightInstanceDao createFlightInstanceDao();
 	
+	public abstract OrderDao createOrderDao();
+	
 	public static DaoFactory getInstance() {
 		String className = ConfigDB.getInstance().getFactoryClassName();
 		DaoFactory factory = null;

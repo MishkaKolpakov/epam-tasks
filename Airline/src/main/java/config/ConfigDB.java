@@ -6,9 +6,6 @@ import java.util.Properties;
 
 public class ConfigDB {
 
-	private String url;
-	private String user;
-	private String pass;
 	private String factoryClassName;
 
 	public ConfigDB() {
@@ -31,18 +28,6 @@ public class ConfigDB {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public String getPass() {
-		return pass;
 	}
 
 	public String getFactoryClassName() {

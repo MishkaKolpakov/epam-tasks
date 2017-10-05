@@ -11,10 +11,16 @@ public class TicketService {
 	
 	public TicketService(DaoFactory daoFactory){
 		this.daoFactory = daoFactory;
-		this.ticketDao = this.daoFactory.createTicketDao();
+		this.ticketDao = daoFactory.createTicketDao();
 	}
+	
+	public TicketService(){
+		this.daoFactory = DaoFactory.getInstance();
+		this.ticketDao = daoFactory.createTicketDao();
+	}
+	
 	private static class Holder {
-		static final TicketService INSTANCE = new TicketService(DaoFactory.getInstance());
+		static final TicketService INSTANCE = new TicketService();
 	}
 
 	public static TicketService getInstance() {

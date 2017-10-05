@@ -16,13 +16,20 @@ public class RegistrationService {
 	
 	public RegistrationService(DaoFactory daoFactory){
 		this.daoFactory = daoFactory;
-		this.userDao = this.daoFactory.createUserDao();
-		this.clientDao = this.daoFactory.createClientDao();
+		this.userDao = daoFactory.createUserDao();
+		this.clientDao = daoFactory.createClientDao();
+		
+	}
+	
+	public RegistrationService(){
+		this.daoFactory = DaoFactory.getInstance();
+		this.userDao = daoFactory.createUserDao();
+		this.clientDao = daoFactory.createClientDao();
 		
 	}
 
 	private static class Holder {
-		static final RegistrationService INSTANCE = new RegistrationService(DaoFactory.getInstance());
+		static final RegistrationService INSTANCE = new RegistrationService();
 	}
 
 	public static RegistrationService getInstance() {

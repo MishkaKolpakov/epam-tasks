@@ -8,7 +8,7 @@ import java.util.Optional;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import controller.command.service.AddCommand;
+import controller.command.service.AddFlight;
 import model.entity.FlightInstance;
 import model.service.AddFlightService;
 
@@ -16,13 +16,13 @@ public class AddCommandTest {
 
 	private AddFlightService addFlightService;
 	private HttpServletRequest request;
-	private AddCommand addCommand;
+	private AddFlight addCommand;
 	
 	@Test
 	public void testExecute(){
 		addFlightService = mock(AddFlightService.class);
 		request = mock(HttpServletRequest.class);
-		addCommand = new AddCommand(addFlightService);
+		addCommand = new AddFlight(addFlightService);
 		String expected = "/admin";
 		
 		FlightInstance flightInstance = new FlightInstance.Builder()

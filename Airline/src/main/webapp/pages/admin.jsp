@@ -9,9 +9,7 @@
 <title>Administrator</title>
 </head>
 <body>
-	<form action="controller" method="post">
-	<input type="hidden" name="command" value="ADD">
-		
+	<form action="${pageContext.request.contextPath}/rest/add" method="post">
 		<fmt:message key="order.from"/>
 		<select name="from">
 			<option value="Kiev" selected="selected">Kiev</option>
@@ -48,6 +46,6 @@
 	
 	<c:out value="${addWrong}"/>
 	<br>
-	<a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="main.logout"/></a>
+	<a href="${pageContext.request.contextPath}/rest/login"><fmt:message key="main.logout"/></a>
 </body>
 </html>

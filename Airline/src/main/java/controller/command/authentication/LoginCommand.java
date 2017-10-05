@@ -10,6 +10,7 @@ import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
 import model.entity.User;
+import model.service.LoginService;
 import model.service.Loginable;
 
 public class LoginCommand implements ActionCommand {
@@ -18,6 +19,10 @@ public class LoginCommand implements ActionCommand {
 	
 	public LoginCommand(Loginable loginer){
 		this.loginer = loginer;
+	}
+	
+	public LoginCommand(){
+		this.loginer = LoginService.getInstance();
 	}
 
 	private static final String LOGIN_PATH = "path.page.login";

@@ -14,11 +14,11 @@
 	
 	<div class="menu">
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/controller?command=profile"><fmt:message key="main.profile"/></a></li>
-			<li><a href="${pageContext.request.contextPath}/controller?command=book"><fmt:message key="main.book"/></a></li>
-			<li><a href="${pageContext.request.contextPath}/controller?command=orders"><fmt:message key="main.orders"/></a></li>
-			<li><a href="${pageContext.request.contextPath}/controller?command=about"><fmt:message key="main.about"/></a></li>
-			<li><a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="main.logout"/></a></li>
+			<li><a href="${pageContext.request.contextPath}/rest/profile"><fmt:message key="main.profile"/></a></li>
+			<li><a href="${pageContext.request.contextPath}/rest/book"><fmt:message key="main.book"/></a></li>
+			<li><a href="${pageContext.request.contextPath}/rest/orders"><fmt:message key="main.orders"/></a></li>
+			<li><a href="${pageContext.request.contextPath}/rest/about"><fmt:message key="main.about"/></a></li>
+			<li><a href="${pageContext.request.contextPath}/rest/logout"><fmt:message key="main.logout"/></a></li>
 		</ul>
 		<br>
 	</div>

@@ -23,13 +23,12 @@
 	<fmt:message key="service.amount" />
 	<c:out value="${ticket.flight.placesAmount}" /><br>
 	<fmt:message key="ticket.price" />
-	<ctg:money amountInCents="${ticket.ticketPrice}" language="${locale}" /><br>
+	<ctg:money amountInCents="${ticket.ticketPrice}" /><br>
 	<fmt:message key="ticket.queue.price" />
-	<ctg:money amountInCents="${ticket.firstInQueuePrice}" language="${locale}" /><br>
+	<ctg:money amountInCents="${ticket.firstInQueuePrice}" /><br>
 	<fmt:message key="ticket.baggage.price" />
-	<ctg:money amountInCents="${ticket.baggagePrice}" language="${locale}" /><br><br>
-	<form action="controller" method="post">
-		<input type="hidden" name="command" value="ORDER">
+	<ctg:money amountInCents="${ticket.baggagePrice}" /><br><br>
+	<form action="${pageContext.request.contextPath}/rest/order" method="post">
 		<input type="hidden" name="ticketId" value="${ticket.id}">
 		<fmt:message key="ticket.baggage"/>
 		<input type="checkbox" name="baggage" value="baggage" /><br>
@@ -37,7 +36,7 @@
 		<input type="checkbox" name="firstQueue" value="queue" /><br>
 		<input type="submit" value="<fmt:message key="order.order"/>">
 	</form>
-	<a href="${pageContext.request.contextPath}/controller?command=book"><fmt:message key="ticket.back"/></a>
+	<a href="${pageContext.request.contextPath}/rest/book"><fmt:message key="ticket.back"/></a>
 	<c:import url="/pages/static/footer.jsp" />
 </body>
 </html>

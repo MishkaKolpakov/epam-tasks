@@ -13,13 +13,18 @@ public class FindService {
 	private DaoFactory daoFactory;
 	private FlightDao flightDao;
 	
+	public FindService(){
+		this.daoFactory = DaoFactory.getInstance();
+		flightDao = daoFactory.createFlightDao();
+	}
+	
 	public FindService(DaoFactory daoFactory){
 		this.daoFactory = daoFactory;
-		flightDao = this.daoFactory.createFlightDao();
+		flightDao = daoFactory.createFlightDao();
 	}
 	
 	private static class Holder {
-		static final FindService INSTANCE = new FindService(DaoFactory.getInstance());
+		static final FindService INSTANCE = new FindService();
 	}
 
 	public static FindService getInstance() {

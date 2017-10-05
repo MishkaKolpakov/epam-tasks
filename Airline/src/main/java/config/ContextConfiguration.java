@@ -9,6 +9,9 @@ public class ContextConfiguration {
 	private static final String JNDI = "java:comp/env";
 	private static final String DATASOURCE_NAME = "jdbc/airline";
 
+	private ContextConfiguration(){
+	}
+	
 	public static DataSource getDataSource() throws NamingException {
 		Context context = null;
 		DataSource dataSource = null;

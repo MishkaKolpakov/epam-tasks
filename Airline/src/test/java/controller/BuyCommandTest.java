@@ -1,6 +1,7 @@
 package controller;
 
 import model.service.BuyService;
+import model.service.IncreasePriceService;
 import model.service.OrderService;
 import static org.mockito.Mockito.*;
 
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.junit.Test;
 
-import controller.command.service.BuyCommand;
+import controller.command.service.BuyTicket;
 
 import static org.junit.Assert.*;
 
@@ -17,16 +18,19 @@ public class BuyCommandTest {
 	private BuyService buyService;
 	private OrderService orderService;
 	private HttpServletRequest request;
-	private BuyCommand buyCommand;
+	private BuyTicket buyCommand;
 	private HttpSession session;
+	private IncreasePriceService increasePriceService;
 	
 	@Test
 	public void testExecuteSuccess(){
 		buyService = mock(BuyService.class);
 		orderService = mock(OrderService.class);
+		increasePriceService = mock(IncreasePriceService.class);
 		request = mock(HttpServletRequest.class);
 		session = mock(HttpSession.class);
-		buyCommand = new BuyCommand(buyService, orderService);
+		
+		buyCommand = new BuyTicket(buyService, orderService, increasePriceService);
 		
 		when(request.getParameter(anyString())).thenReturn("1");
 		when(request.getSession()).thenReturn(session);
@@ -47,8 +51,9 @@ public class BuyCommandTest {
 		buyService = mock(BuyService.class);
 		orderService = mock(OrderService.class);
 		request = mock(HttpServletRequest.class);
+		increasePriceService = mock(IncreasePriceService.class);
 		session = mock(HttpSession.class);
-		buyCommand = new BuyCommand(buyService, orderService);
+		buyCommand = new BuyTicket(buyService, orderService, increasePriceService);
 		
 		when(request.getParameter(anyString())).thenReturn("1");
 		when(request.getSession()).thenReturn(session);

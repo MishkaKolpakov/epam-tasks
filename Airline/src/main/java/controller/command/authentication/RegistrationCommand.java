@@ -13,10 +13,14 @@ import model.service.RegistrationService;
 
 public class RegistrationCommand implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(RegistrationCommand.class.getSimpleName());
-	private RegistrationService clientService;
+	private RegistrationService registrationService;
 	
-	public RegistrationCommand(RegistrationService service){
-		clientService = service;
+	public RegistrationCommand(RegistrationService registrationService){
+		this.registrationService = registrationService;
+	}
+	
+	public RegistrationCommand(){
+		this.registrationService = RegistrationService.getInstance();
 	}
 	
 	@Override
@@ -43,13 +47,13 @@ public class RegistrationCommand implements ActionCommand {
 		String lastName = request.getParameter("lastName");
 		String passportId = request.getParameter("passportId");
 
-		if (clientService.checkByEmailAndPassportId(email, passportId)) {
+		if (registrationService.checkByEmailAndPassportId(email, passportId)) {
 			return false;
 		} else {
 			User user = createUser(email, password);
 			Client client = createClient(firstName, middleName, lastName, passportId);
 			
-			clientService.registerClient(user, client);
+			registrationService.registerClient(user, client);
 			return true;
 		}
 	}

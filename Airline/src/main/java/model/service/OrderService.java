@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import dao.ClientDao;
 import dao.DaoFactory;
+import dao.OrderDao;
 import dao.TicketDao;
 import model.entity.Order;
 import model.entity.Ticket;
@@ -14,15 +15,24 @@ public class OrderService {
 	private DaoFactory daoFactory;
 	private ClientDao clientDao;
 	private TicketDao ticketDao;
+	private OrderDao orderDao;
 
+	public OrderService(){
+		this.daoFactory = DaoFactory.getInstance();
+		this.clientDao = daoFactory.createClientDao();
+		this.ticketDao = daoFactory.createTicketDao();
+		this.orderDao =  daoFactory.createOrderDao();
+	}
+	
 	public OrderService(DaoFactory daoFactory) {
 		this.daoFactory = daoFactory;
-		this.clientDao = this.daoFactory.createClientDao();
-		this.ticketDao = this.daoFactory.createTicketDao();
+		this.clientDao = daoFactory.createClientDao();
+		this.ticketDao = daoFactory.createTicketDao();
+		this.orderDao = daoFactory.createOrderDao();
 	}
 
 	private static class Holder {
-		static final OrderService INSTANCE = new OrderService(DaoFactory.getInstance());
+		static final OrderService INSTANCE = new OrderService();
 	}
 
 	public static OrderService getInstance() {
@@ -34,12 +44,12 @@ public class OrderService {
 	}
 
 	public boolean checkOrder(Long clientId, Long ticketId) {
-		return !(ticketDao.getOrderByIds(clientId, ticketId).isPresent());
+		return !(orderDao.getOrderByIds(clientId, ticketId).isPresent());
 	}
 
 	public Optional<Order> getClientOrder(Long clientId) {
 		Order order = new Order();
-		List<Long> ids = ticketDao.getOrderIdsByClientId(clientId);
+		List<Long> ids = orderDao.getOrderIdsByClientId(clientId);
 		List<Ticket> tickets = new ArrayList<>();
 		Ticket ticket = null;
 

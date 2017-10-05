@@ -2,6 +2,7 @@ package model.services;
 
 import dao.ClientDao;
 import dao.DaoFactory;
+import dao.OrderDao;
 import dao.TicketDao;
 import model.entity.Client;
 import model.entity.Order;
@@ -21,6 +22,7 @@ public class OrderServiceTest {
 	private DaoFactory daoFactory;
 	private ClientDao clientDao;
 	private TicketDao ticketDao;
+	private OrderDao orderDao;
 	private OrderService orderService;
 
 	@Test
@@ -28,9 +30,11 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 
 		orderService = new OrderService(daoFactory);
 
@@ -48,9 +52,11 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 
 		orderService = new OrderService(daoFactory);
 
@@ -68,19 +74,21 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 
 		Long ids = 1L;
-		when(ticketDao.getOrderByIds(anyLong(), anyLong())).thenReturn(Optional.of(ids));
+		when(orderDao.getOrderByIds(anyLong(), anyLong())).thenReturn(Optional.of(ids));
 
 		assertFalse(orderService.checkOrder(1L, 1L));
 
 		verify(daoFactory).createClientDao();
 		verify(daoFactory).createTicketDao();
-		verify(ticketDao).getOrderByIds(anyLong(), anyLong());
+		verify(orderDao).getOrderByIds(anyLong(), anyLong());
 	}
 
 	@Test
@@ -88,27 +96,31 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 
-		when(ticketDao.getOrderByIds(anyLong(), anyLong())).thenReturn(Optional.empty());
+		when(orderDao.getOrderByIds(anyLong(), anyLong())).thenReturn(Optional.empty());
 
 		assertTrue(orderService.checkOrder(1L, 1L));
 
 		verify(daoFactory).createClientDao();
 		verify(daoFactory).createTicketDao();
-		verify(ticketDao).getOrderByIds(anyLong(), anyLong());
+		verify(orderDao).getOrderByIds(anyLong(), anyLong());
 	}
 	
 	public void testDeleteFromOrderSuccess(){
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 
 		when(clientDao.deleteClientTicket(anyLong(), anyLong())).thenReturn(true);
@@ -124,9 +136,11 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 
 		when(clientDao.deleteClientTicket(anyLong(), anyLong())).thenReturn(false);
@@ -142,9 +156,11 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 
 		Ticket ticket = new Ticket.Builder()
@@ -161,7 +177,7 @@ public class OrderServiceTest {
 				ticket
 		}));
 		
-		when(ticketDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
+		when(orderDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
 		when(ticketDao.getTicketByOrderId(anyLong())).thenReturn(Optional.of(ticket));		
 		
 		Optional<Order> actual = orderService.getClientOrder(1L);
@@ -170,7 +186,7 @@ public class OrderServiceTest {
 		
 		verify(daoFactory).createClientDao();
 		verify(daoFactory).createTicketDao();
-		verify(ticketDao.getOrderIdsByClientId(anyLong()));
+		verify(orderDao.getOrderIdsByClientId(anyLong()));
 		verify(ticketDao.getTicketByOrderId(anyLong()));
 	}
 	
@@ -178,9 +194,11 @@ public class OrderServiceTest {
 		daoFactory = mock(DaoFactory.class);
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
+		orderDao = mock(OrderDao.class);
 
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		when(daoFactory.createOrderDao()).thenReturn(orderDao);
 		orderService = new OrderService(daoFactory);
 				
 		List<Long> ids = Arrays.asList(new Long[]{});
@@ -189,7 +207,7 @@ public class OrderServiceTest {
 		expected.setClient(new Client.Builder().addId(1L).build());
 		expected.setTickets(Arrays.asList(new Ticket[]{}));
 		
-		when(ticketDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
+		when(orderDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
 		when(ticketDao.getTicketByOrderId(anyLong())).thenReturn(Optional.of(null));		
 		
 		Optional<Order> actual = orderService.getClientOrder(1L);
@@ -198,7 +216,7 @@ public class OrderServiceTest {
 		
 		verify(daoFactory).createClientDao();
 		verify(daoFactory).createTicketDao();
-		verify(ticketDao.getOrderIdsByClientId(anyLong()));
+		verify(orderDao.getOrderIdsByClientId(anyLong()));
 		verify(ticketDao.getTicketByOrderId(anyLong()));
 	}
 }

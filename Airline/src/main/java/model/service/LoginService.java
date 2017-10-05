@@ -13,9 +13,13 @@ public class LoginService implements Loginable {
 	public LoginService(DaoFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
+	
+	public LoginService() {
+		this.daoFactory = DaoFactory.getInstance();
+	}
 
 	private static class Holder {
-		static final LoginService INSTANCE = new LoginService(DaoFactory.getInstance());
+		static final LoginService INSTANCE = new LoginService();
 	}
 
 	public static LoginService getInstance() {

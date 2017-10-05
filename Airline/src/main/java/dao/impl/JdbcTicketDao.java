@@ -1,8 +1,6 @@
 package dao.impl;
 
 import java.sql.Connection;
-
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +9,6 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,22 +22,20 @@ public class JdbcTicketDao implements TicketDao {
 	private final static String SELECT_FROM_WHERE_ID = "SELECT t.id, departure_date, places_amount, baggage_price, first_queue_price, ticket_price, "
 			+ "flight_from, flight_to, duration " + "FROM flight f inner join ticket t on f.id = t.id "
 			+ "left join flight_instance f_i on f.flight_instance_id = f_i.id " + "WHERE f.id = ?";
-
-	private final static String SELECT_AMOUNT_FROM = "SELECT places_amount FROM flight WHERE id = ?";
-
+	
 	private final static String UPDATE_SET_AMOUNT = "UPDATE flight set places_amount = (SELECT places_amount-1 from "
 			+ "(SELECT * from flight) as places where id = ?) WHERE id = ?";
-
-	private static final String SELECT_ORDER = "SELECT ticket_id FROM orders where id = ?";
-
+	private final static String UPDATE_SET_PRICE = "UPDATE ticket set ticket_price = (SELECT (ticket_price + (ticket_price * 0.2)) from "
+			+ "(SELECT * from ticket) as tickets where id = ?) WHERE id = ?";
+	
+	private static final String SELECT_ORDER_PRICE = "SELECT order_price FROM orders where id=?";
+	private final static String SELECT_AMOUNT_FROM = "SELECT places_amount FROM flight WHERE id = ?";
 	private static final String SELECT_BAGGAGE_PRICE = "SELECT baggage_price FROM ticket where id = ?";
 	private static final String SELECT_FIRST_QUEUE_PRICE = "SELECT first_queue_price FROM ticket where id = ?";
-	private static final String SELECT_TICKET_PRICE = "SELECT ticket_price FROM ticket where id = ?";
-	private static final String SELECT_ORDER_PRICE = "SELECT order_price FROM orders where id=?";
-	private static final String SELECT_ORDER_ID = "SELECT id FROM orders WHERE client_id = ?";
-	private static final String SELECT_WHERE_ORDERID_CLIENTID = "SELECT id FROM orders WHERE client_id = ? and ticket_id = ?";
-	
+	private static final String SELECT_TICKET_PRICE = "SELECT ticket_price FROM ticket where id = ?";	
 	private static final String INSERT_INTO_TICKET = "INSERT INTO ticket(baggage_price, first_queue_price, ticket_price) VALUES(?,?,?)";
+	private static final String SELECT_ORDER = "SELECT ticket_id FROM orders where id = ?";
+	
 	private Connection connection;
 
 	public JdbcTicketDao(Connection connection) {
@@ -79,7 +74,25 @@ public class JdbcTicketDao implements TicketDao {
 			throw new RuntimeException(e);
 		}
 		return result;
+	}
+	
+	@Override
+	public Integer getOrderPrice(Long orderId) {
+		Integer result = 0;
 
+		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_PRICE)) {
+			preparedStatement.setLong(1, orderId);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+				result = resultSet.getInt("order_price");
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return result;
 	}
 
 	@Override
@@ -100,6 +113,25 @@ public class JdbcTicketDao implements TicketDao {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}	
+	}
+	
+	@Override
+	public Optional<Ticket> getTicketByOrderId(Long orderId) {
+		Ticket result = null;
+		
+		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER)) {
+			preparedStatement.setLong(1, orderId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next()) {
+				result = findElementById(resultSet.getLong(1)).get();
+				result.setFinalPrice(getOrderPrice(orderId));
+			}
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return Optional.of(result);
 	}
 
 	@Override
@@ -168,24 +200,7 @@ public class JdbcTicketDao implements TicketDao {
 		return result;
 	}
 
-	@Override
-	public Optional<Ticket> getTicketByOrderId(Long orderId) {
-		Ticket result = null;
-		
-		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER)) {
-			preparedStatement.setLong(1, orderId);
-			ResultSet resultSet = preparedStatement.executeQuery();
-			
-			if (resultSet.next()) {
-				result = findElementById(resultSet.getLong(1)).get();
-				result.setFinalPrice(getOrderPrice(orderId));
-			}
-			
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		return Optional.of(result);
-	}
+
 
 	@Override
 	public Integer getBaggagePriceById(Long ticketId) {
@@ -206,24 +221,7 @@ public class JdbcTicketDao implements TicketDao {
 		return result;
 	}
 	
-	@Override
-	public Integer getOrderPrice(Long orderId) {
-		Integer result = 0;
 
-		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_PRICE)) {
-			preparedStatement.setLong(1, orderId);
-			
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			if (resultSet.next()) {
-				result = resultSet.getInt("order_price");
-			}
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		return result;
-	}
 
 	@Override
 	public Integer getFirstQueuePriceById(Long ticketId) {
@@ -265,42 +263,16 @@ public class JdbcTicketDao implements TicketDao {
 	}
 
 	@Override
-	public List<Long> getOrderIdsByClientId(Long clientId) {
-		List<Long> result = new ArrayList<>();
-
-		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_ID)) {
-			preparedStatement.setLong(1, clientId);
-
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			while(resultSet.next()) {
-				result.add(resultSet.getLong(1));
-			}
-
+	public boolean updatePrice(Long ticketId) {
+		try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SET_PRICE)) {
+			preparedStatement.setLong(1, ticketId);
+			preparedStatement.setLong(2, ticketId);
+			preparedStatement.executeUpdate();
+			return true;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		
-		return result;
 	}
 
-	@Override
-	public Optional<Long> getOrderByIds(Long clientId, Long ticketId) {
-		Long result = null;
-		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_WHERE_ORDERID_CLIENTID)) {
-			preparedStatement.setLong(1, clientId);
-			preparedStatement.setLong(2, ticketId);
-			
-			ResultSet resultSet = preparedStatement.executeQuery();
-			if(resultSet.next()){
-				result = resultSet.getLong(1);
-				return Optional.of(result);
-			}
-			
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return Optional.empty();
-	}
+	
 }

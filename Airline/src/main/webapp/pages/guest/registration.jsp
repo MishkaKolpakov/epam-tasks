@@ -13,8 +13,7 @@
 
 </head>
 <body>
-	<form method="post" action="controller" name="registrationForm" >
-		<input type="hidden" name="command" value="registration" />
+	<form method="post" action="${pageContext.request.contextPath}/rest/registration" name="registrationForm" >
 		<fmt:message key="login.email"/><br> 
 		<input type="email" name="email" value="" required="required" placeholder="xxxx@xxxx.xx"/> 
 		
@@ -40,6 +39,6 @@
 		<br><br><c:out value="${wrongRegistration}"/><br>
 		<input type="submit" value="<fmt:message key="register.signup"/>" />
 	</form>
-	<a href="${pageContext.request.contextPath}/login"><fmt:message key="login.signin"/></a>
+	<a href="${pageContext.request.contextPath}/rest/login"><fmt:message key="login.signin"/></a>
 </body>
 </html>

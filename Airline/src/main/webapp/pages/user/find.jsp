@@ -10,8 +10,7 @@
 </head>
 <body>
 	<c:import url="/pages/static/header.jsp" />
-	<form action="controller" method="post">
-	<input type="hidden" name="command" value="FIND">
+	<form action="${pageContext.request.contextPath}/rest/find" method="post">
 		<fmt:message key="order.from"/> 
 		<select name="from">
 			<option value="Kiev" selected="selected">Kiev</option>
@@ -40,8 +39,7 @@
 		<c:out value="${flight.flightInstance.duration}" /><br>
 		<fmt:message key="service.amount"/>
 		<c:out value="${flight.placesAmount}" /><br>
-		<form action="controller" method="post">
-			<input type="hidden" name="command" value="TICKET">
+		<form action="${pageContext.request.contextPath}/rest/ticket" method="post">
 			<input type="hidden" name="flightId" value="${flight.id}">
 			<input type="submit" value="<fmt:message key="order.order"/>"/>
 		</form>

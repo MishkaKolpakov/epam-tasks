@@ -8,14 +8,20 @@ public class BuyService {
 	private TicketDao ticketDao;
 	private FlightService flightService;
 
+	public BuyService() {
+		this.daoFactory = DaoFactory.getInstance();
+		ticketDao = daoFactory.createTicketDao();
+		flightService = new FlightService(daoFactory);
+	}
+	
 	public BuyService(DaoFactory daoFactory) {
 		this.daoFactory = daoFactory;
-		ticketDao = this.daoFactory.createTicketDao();
+		ticketDao = daoFactory.createTicketDao();
 		flightService = new FlightService(daoFactory);
 	}
 
 	private static class Holder {
-		static final BuyService INSTANCE = new BuyService(DaoFactory.getInstance());
+		static final BuyService INSTANCE = new BuyService();
 	}
 
 	public static BuyService getInstance() {
@@ -33,5 +39,9 @@ public class BuyService {
 			flightService.deleteEndedTickets(ticketId);
 			return false;
 		}
+	}
+	
+	public Integer getTicketsAmount(Long ticketId){
+		return ticketDao.findAmountById(ticketId);
 	}
 }

@@ -5,6 +5,7 @@ import dao.ClientDao;
 import dao.DaoFactory;
 import dao.FlightDao;
 import dao.FlightInstanceDao;
+import dao.OrderDao;
 import dao.TicketDao;
 import dao.UserDao;
 import java.sql.Connection;
@@ -52,5 +53,10 @@ public class JdbcDaoFactory extends DaoFactory {
 	@Override
 	public FlightInstanceDao createFlightInstanceDao() {
 		return new JdbcFlightInstanceDao(getConnection());
+	}
+
+	@Override
+	public OrderDao createOrderDao() {
+		return new JdbcOrderDao(getConnection());
 	}
 }

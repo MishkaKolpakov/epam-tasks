@@ -5,7 +5,6 @@
 <fmt:setBundle basename="pagecontent" />
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/profile.css">
 <title>Profile</title>
 </head>
 <body>

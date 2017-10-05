@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -80,7 +81,7 @@ public class JdbcUserDao implements UserDao {
 	@Override
 	public long insert(User item) {
 		long result = -1L;
-		try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER)) {
+		try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER, Statement.RETURN_GENERATED_KEYS)) {
 			preparedStatement.setString(1, item.getEmail());
 			preparedStatement.setString(2, item.getPassword());
 			preparedStatement.executeUpdate();

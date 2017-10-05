@@ -12,9 +12,14 @@ public class ProfileService {
 	private DaoFactory daoFactory;
 	private UserDao userDao;
 	
+	public ProfileService(){
+		this.daoFactory = DaoFactory.getInstance();
+		this.userDao = daoFactory.createUserDao();
+	}
+	
 	public ProfileService(DaoFactory daoFactory){
 		this.daoFactory = daoFactory;
-		this.userDao = this.daoFactory.createUserDao();
+		this.userDao = daoFactory.createUserDao();
 	}
 
 	private static class Holder {
@@ -33,7 +38,7 @@ public class ProfileService {
 	public Optional<Client> getClientByEmail(String email) {
 		Optional<User> user = userDao.getUserByEmail(email);
 		Optional<Client> client = Optional.empty();
-
+		
 		if (user.isPresent()) {
 			client = getClientByUserId(user.get().getId());
 		}

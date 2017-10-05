@@ -18,6 +18,10 @@ public class ShowOrderCommand implements ActionCommand {
 		orderService = service;
 	}
 	
+	public ShowOrderCommand() {
+		this.orderService = OrderService.getInstance();
+	}
+	
 	@Override
 	public String execute(HttpServletRequest request) {
 		String page = null;

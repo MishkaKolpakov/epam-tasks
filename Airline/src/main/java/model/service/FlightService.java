@@ -10,13 +10,18 @@ public class FlightService {
 	private DaoFactory daoFactory;
 	private FlightDao flightDao;
 	
+	public FlightService(){
+		this.daoFactory = DaoFactory.getInstance();
+		flightDao = daoFactory.createFlightDao();
+	}
+	
 	public FlightService(DaoFactory daoFactory){
 		this.daoFactory = daoFactory;
-		flightDao = this.daoFactory.createFlightDao();
+		flightDao = daoFactory.createFlightDao();
 	}
 
 	private static class Holder {
-		static final FlightService INSTANCE = new FlightService(DaoFactory.getInstance());
+		static final FlightService INSTANCE = new FlightService();
 	}
 
 	public static FlightService getInstance() {
