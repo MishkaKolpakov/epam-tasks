@@ -1085,3 +1085,437 @@
 2017-10-05 19:25:32 INFO  FindFlight:39 - User search flight only by direction.
 2017-10-05 19:25:32 INFO  FindFlight:48 - User got filtered information about flights.
 2017-10-05 19:25:34 INFO  ShowContact:19 - User clicked contact us menu item
+2017-10-06 08:16:01 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 08:16:02 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 08:16:03 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 08:16:12 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 08:16:12 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 08:16:13 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 08:16:13 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 08:16:13 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 08:16:14 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 08:16:14 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 08:16:16 INFO  JdbcFlightDao:166 - Find flight method was called
+2017-10-06 08:16:16 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 08:16:16 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 08:16:17 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 08:16:19 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 08:16:20 INFO  ShowOrderCommand:36 - User clicked order list menu item
+2017-10-06 08:16:27 INFO  AddToOrder:39 - User tried to order two tickets and got warn message!
+2017-10-06 08:16:28 INFO  ShowOrderCommand:36 - User clicked order list menu item
+2017-10-06 08:20:50 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 08:20:57 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 08:20:57 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 08:20:58 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 08:20:58 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 08:21:01 INFO  JdbcFlightDao:166 - Find flight method was called
+2017-10-06 08:21:01 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 08:21:01 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 08:21:02 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 08:21:04 INFO  AddToOrder:39 - User tried to order two tickets and got warn message!
+2017-10-06 08:21:05 INFO  ShowOrderCommand:36 - User clicked order list menu item
+2017-10-06 08:21:09 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 08:21:09 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 08:21:09 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 08:21:10 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 08:21:10 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 08:21:14 INFO  JdbcFlightDao:166 - Find flight method was called
+2017-10-06 08:21:14 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 08:21:14 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 08:54:23 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 08:54:23 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 08:54:25 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 08:54:25 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 08:54:26 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 08:54:29 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 08:54:30 INFO  ShowOrderCommand:36 - User clicked order list menu item
+2017-10-06 09:07:03 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:07:03 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 09:07:04 INFO  ShowOrderCommand:41 - User clicked order list menu item
+2017-10-06 09:07:10 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:07:10 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:07:14 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:07:15 INFO  AddToOrder:39 - User tried to order two tickets and got warn message!
+2017-10-06 09:07:16 INFO  ShowOrderCommand:41 - User clicked order list menu item
+2017-10-06 09:07:17 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:07:17 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:07:19 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:07:20 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:07:21 INFO  ShowOrderCommand:41 - User clicked order list menu item
+2017-10-06 09:22:25 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:22:25 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 09:22:26 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:22:28 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:22:28 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:22:29 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:22:31 INFO  AddToOrder:39 - User tried to order two tickets and got warn message!
+2017-10-06 09:22:33 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:24:41 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:24:41 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 09:24:42 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:24:46 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:24:46 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:24:46 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:24:48 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:24:48 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:24:49 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:24:50 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:24:51 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:24:53 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:24:53 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:24:53 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:24:54 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:24:54 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:24:56 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:24:57 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:24:57 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:24:57 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:24:58 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:24:58 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:24:59 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:25:04 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:25:05 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:25:06 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:25:06 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:25:06 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:25:07 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:25:07 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:25:09 INFO  JdbcFlightDao:166 - Find flight method was called
+2017-10-06 09:25:09 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 09:25:09 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 09:25:11 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:25:15 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:25:16 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:25:17 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:25:17 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:25:17 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:25:18 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:25:18 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:25:19 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:25:20 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:25:21 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:25:22 INFO  JdbcFlightDao:179 - Delete ticket method was called
+2017-10-06 09:25:22 INFO  BuyTicket:48 - User tried to buy tickets that were ended and got fail message
+2017-10-06 09:25:22 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:25:22 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:25:26 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:25:26 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:25:31 INFO  JdbcFlightDao:166 - Find flight method was called
+2017-10-06 09:25:31 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 09:25:31 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 09:25:41 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:25:41 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:26:04 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:26:04 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 09:26:04 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 09:26:06 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:26:06 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:26:06 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:26:06 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 09:27:53 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:27:53 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:27:53 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:27:53 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 09:27:53 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 09:28:19 INFO  JdbcClientDao:110 - Client was not found by passport id
+2017-10-06 09:28:19 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:28:19 INFO  RegistrationCommand:37 - The user entered incorrect data during registration.
+2017-10-06 09:28:48 INFO  JdbcClientDao:108 - Client was found by passport id
+2017-10-06 09:28:48 INFO  RegistrationCommand:37 - The user entered incorrect data during registration.
+2017-10-06 09:29:17 INFO  JdbcClientDao:110 - Client was not found by passport id
+2017-10-06 09:29:17 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:29:17 INFO  JdbcUserDao:93 - Insert user method was called
+2017-10-06 09:29:17 INFO  JdbcClientDao:83 - Client was inserted
+2017-10-06 09:29:17 INFO  RegistrationCommand:33 - The user registered successfully.
+2017-10-06 09:33:08 INFO  AddFlight:33 - Admin added successfully new flight
+2017-10-06 09:33:41 INFO  AddFlight:33 - Admin added successfully new flight
+2017-10-06 09:33:52 INFO  AddFlight:33 - Admin added successfully new flight
+2017-10-06 09:34:51 INFO  AddFlight:33 - Admin added successfully new flight
+2017-10-06 09:35:03 INFO  BuyTicket:48 - User tried to buy tickets that were ended and got fail message
+2017-10-06 09:35:03 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:35:03 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:35:03 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:35:19 INFO  BuyTicket:48 - User tried to buy tickets that were ended and got fail message
+2017-10-06 09:35:19 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:35:19 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:35:19 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:35:35 INFO  LoginCommand:52 - Successful log in as: null
+2017-10-06 09:35:35 WARN  LoginCommand:56 - Wrong login, password input.
+2017-10-06 09:35:35 INFO  LoginCommand:52 - Successful log in as: null
+2017-10-06 09:36:16 INFO  LoginCommand:52 - Successful log in as: null
+2017-10-06 09:36:16 WARN  LoginCommand:56 - Wrong login, password input.
+2017-10-06 09:36:16 INFO  LoginCommand:52 - Successful log in as: null
+2017-10-06 09:37:34 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:37:34 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 09:37:35 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:37:35 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 09:37:35 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 09:37:36 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:37:36 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:37:39 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:37:44 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:37:44 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:37:47 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:37:47 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:37:47 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:37:48 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:37:48 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:38:00 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:38:00 INFO  LoginCommand:52 - Successful log in as: ADMIN
+2017-10-06 09:38:23 INFO  JdbcFlightInstanceDao:44 - Find flight instance by direction was called
+2017-10-06 09:38:23 INFO  JdbcFlightDao:93 - Inserted new flight
+2017-10-06 09:38:23 INFO  AddFlight:33 - Admin added successfully new flight
+2017-10-06 09:38:32 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 09:38:32 INFO  LoginCommand:52 - Successful log in as: USER
+2017-10-06 09:38:33 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:38:33 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 09:38:33 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:38:33 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:38:36 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:38:47 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 09:38:48 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:38:50 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:38:50 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:38:55 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 09:38:56 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 09:38:58 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 09:38:58 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 09:38:58 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 09:38:59 INFO  JdbcFlightDao:57 - Returned list of all flights
+2017-10-06 09:38:59 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 09:39:01 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 10:53:49 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:53:49 INFO  Login:52 - Successful log in as: USER
+2017-10-06 10:53:51 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:53:51 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 10:53:52 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:53:52 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:53:54 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:53:54 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:53:54 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:54:07 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:54:07 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:54:07 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:54:10 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 10:54:14 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 10:54:15 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:54:18 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 10:54:18 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 10:54:18 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 10:54:19 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:54:19 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:54:24 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:54:24 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:54:24 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:54:30 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:54:30 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:54:30 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:54:33 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:54:33 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 10:54:34 INFO  ShowContact:19 - User clicked contact us menu item
+2017-10-06 10:54:35 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:54:35 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 10:54:35 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 10:54:39 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 10:54:40 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 10:55:06 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 10:55:07 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 10:55:14 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:55:14 INFO  Login:52 - Successful log in as: USER
+2017-10-06 10:55:16 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:55:16 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 10:55:16 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 10:55:16 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:55:16 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:55:17 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:55:17 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 10:55:18 INFO  ShowContact:19 - User clicked contact us menu item
+2017-10-06 10:55:19 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:55:19 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:55:20 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:55:20 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 10:55:20 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:55:20 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 10:55:20 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 10:55:21 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:55:21 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:55:23 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:55:23 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:55:23 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:55:30 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:55:30 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:55:30 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:55:33 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:55:33 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:55:33 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:55:39 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:55:39 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:55:39 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:55:41 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 10:56:01 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 10:56:02 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:56:06 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:06 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:56:07 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:56:07 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:56:07 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:56:10 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:56:10 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:56:10 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:56:13 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:56:14 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 10:56:14 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 10:56:14 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 10:56:15 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:15 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:56:17 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 10:56:17 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 10:56:17 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:56:21 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 10:56:21 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 10:56:21 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 10:56:24 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 10:56:24 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 10:56:24 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 10:56:25 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:25 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:56:26 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 10:56:26 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 10:56:27 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:27 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:56:38 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:38 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:56:53 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:56:53 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:57:18 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:57:18 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 10:57:30 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 10:57:30 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:08:16 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:08:36 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:08:43 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:08:44 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:08:45 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:13 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:15 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:24 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:24 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:25 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:35 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:35 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:42 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:09:42 INFO  Login:52 - Successful log in as: USER
+2017-10-06 11:09:46 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:09:46 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 11:09:46 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 11:09:51 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:52 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:09:58 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:09:58 INFO  Login:52 - Successful log in as: USER
+2017-10-06 11:10:01 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:10:10 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:10:10 INFO  Login:52 - Successful log in as: ADMIN
+2017-10-06 11:10:25 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:10:25 INFO  Login:52 - Successful log in as: USER
+2017-10-06 11:11:36 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:11:37 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:12:03 WARN  SecurityFilter:44 - Guest tried to get user resources
+2017-10-06 11:14:31 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:14:32 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:14:33 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:14:33 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:16:48 WARN  SecurityFilter:44 - Guest tried to get user resources
+2017-10-06 11:16:53 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:17:10 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:17:10 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:17:25 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:17:25 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:21:32 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:21:32 INFO  Login:52 - Successful log in as: USER
+2017-10-06 11:21:33 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 11:21:33 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 11:21:35 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:21:35 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:21:47 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 11:21:52 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 11:21:53 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 11:21:56 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 11:21:56 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 11:21:56 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 11:21:57 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:21:57 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:30:09 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:30:09 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:30:09 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:30:12 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 11:30:22 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 11:30:22 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 11:30:25 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 11:30:25 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 11:30:25 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 11:30:26 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:30:26 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:30:29 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:30:29 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:30:29 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:30:33 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 11:30:33 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 11:30:33 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:43:17 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:43:18 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:45:24 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:45:25 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:46:37 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:46:38 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:48:31 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:48:32 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:49:48 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:49:48 WARN  Login:56 - Wrong login, password input.
+2017-10-06 11:52:36 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:52:36 WARN  Login:56 - Wrong login, password input.
+2017-10-06 11:52:50 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:52:51 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:52:52 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:52:53 INFO  ChangeLanguage:22 - Language changed
+2017-10-06 11:53:01 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:53:01 INFO  Login:52 - Successful log in as: USER
+2017-10-06 11:53:02 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:53:02 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:53:05 INFO  ShowContact:19 - User clicked contact us menu item
+2017-10-06 11:53:07 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 11:53:07 INFO  ShowOrder:45 - User opened his order list, which is empty
+2017-10-06 11:53:08 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:53:08 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:53:08 INFO  JdbcUserDao:115 - Get user by email method was called
+2017-10-06 11:53:08 INFO  JdbcUserDao:163 - Get user by client id method was called
+2017-10-06 11:53:08 INFO  ShowProfile:35 - User clicked profile menu item
+2017-10-06 11:53:09 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:53:09 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:53:13 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:53:13 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:53:13 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:53:19 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:53:19 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:53:19 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:53:23 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:53:23 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:53:23 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:53:26 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:53:26 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:53:30 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:53:30 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:53:30 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:53:43 INFO  JdbcFlightDao:147 - Find flight method including date was called
+2017-10-06 11:53:43 INFO  FindFlight:43 - User search flight by direction and date.
+2017-10-06 11:53:43 INFO  FindFlight:48 - User got filtered information about flights.
+2017-10-06 11:53:45 INFO  ShowTicket:35 - User clicked on button that shows detail information about flight
+2017-10-06 11:54:05 INFO  AddToOrder:36 - User successfully ordered the ticket!
+2017-10-06 11:54:06 INFO  ShowOrder:41 - User clicked order list menu item
+2017-10-06 11:54:29 INFO  BuyTicket:45 - User successfully bought ticket.
+2017-10-06 11:54:29 INFO  JdbcClientDao:151 - Client ticket was deleted from orders
+2017-10-06 11:54:29 INFO  BuyTicket:54 - The ticket was deleted from client order
+2017-10-06 11:54:29 INFO  JdbcFlightDao:61 - Returned list of all flights
+2017-10-06 11:54:29 INFO  ShowFlights:29 - User got all available flights
+2017-10-06 11:55:05 INFO  JdbcFlightDao:170 - Find flight method was called
+2017-10-06 11:55:05 INFO  FindFlight:39 - User search flight only by direction.
+2017-10-06 11:55:05 INFO  FindFlight:48 - User got filtered information about flights.

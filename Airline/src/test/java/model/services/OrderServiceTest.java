@@ -4,11 +4,12 @@ import dao.ClientDao;
 import dao.DaoFactory;
 import dao.OrderDao;
 import dao.TicketDao;
-import model.entity.Client;
 import model.entity.Order;
 import model.entity.Ticket;
 import model.service.OrderService;
 import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -171,16 +172,15 @@ public class OrderServiceTest {
 			new Long(1L),
 		});
 		
-		Order expected = new Order();
-		expected.setClient(new Client.Builder().addId(1L).build());
-		expected.setTickets(Arrays.asList(new Ticket[]{
+		List<Ticket> expected = new ArrayList<>();
+		expected = (Arrays.asList(new Ticket[]{
 				ticket
 		}));
 		
 		when(orderDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
 		when(ticketDao.getTicketByOrderId(anyLong())).thenReturn(Optional.of(ticket));		
 		
-		Optional<Order> actual = orderService.getClientOrder(1L);
+		List<Order> actual = orderService.getClientOrder(1L).get();
 
 		assertEquals(expected, actual);
 		
@@ -195,7 +195,11 @@ public class OrderServiceTest {
 		clientDao = mock(ClientDao.class);
 		ticketDao = mock(TicketDao.class);
 		orderDao = mock(OrderDao.class);
-
+		
+		Ticket ticket = new Ticket.Builder()
+				.setId(1L)
+				.build();
+		
 		when(daoFactory.createClientDao()).thenReturn(clientDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		when(daoFactory.createOrderDao()).thenReturn(orderDao);
@@ -203,14 +207,15 @@ public class OrderServiceTest {
 				
 		List<Long> ids = Arrays.asList(new Long[]{});
 		
-		Order expected = new Order();
-		expected.setClient(new Client.Builder().addId(1L).build());
-		expected.setTickets(Arrays.asList(new Ticket[]{}));
+		List<Ticket> expected = new ArrayList<>();
+		expected = (Arrays.asList(new Ticket[]{
+				ticket
+		}));
 		
 		when(orderDao.getOrderIdsByClientId(anyLong())).thenReturn(ids);
 		when(ticketDao.getTicketByOrderId(anyLong())).thenReturn(Optional.of(null));		
 		
-		Optional<Order> actual = orderService.getClientOrder(1L);
+		List<Order> actual = orderService.getClientOrder(1L).get();
 
 		assertEquals(expected, actual);
 		

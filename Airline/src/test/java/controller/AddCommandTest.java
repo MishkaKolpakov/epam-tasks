@@ -23,7 +23,7 @@ public class AddCommandTest {
 		addFlightService = mock(AddFlightService.class);
 		request = mock(HttpServletRequest.class);
 		addCommand = new AddFlight(addFlightService);
-		String expected = "/admin";
+		String expected = "/pages/admin.jsp";
 		
 		FlightInstance flightInstance = new FlightInstance.Builder()
 				.setFrom("Kiev")
@@ -41,5 +41,14 @@ public class AddCommandTest {
 		
 		String actual = addCommand.execute(request);
 		assertEquals(expected, actual);
+		
+		verify(request).getParameter("date");
+		verify(request).getParameter("ticketPrice");
+		verify(request).getParameter("baggagePrice");
+		verify(request).getParameter("queuePrice");
+		verify(request).getParameter("amount");
+		verify(request).getParameter("from");
+		verify(request).getParameter("to");
+		
 	}
 }

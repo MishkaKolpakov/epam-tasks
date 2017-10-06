@@ -1,6 +1,7 @@
 package model.service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -47,20 +48,27 @@ public class OrderService {
 		return !(orderDao.getOrderByIds(clientId, ticketId).isPresent());
 	}
 
-	public Optional<Order> getClientOrder(Long clientId) {
-		Order order = new Order();
+	public Optional<List<Order>> getClientOrder(Long clientId) {
 		List<Long> ids = orderDao.getOrderIdsByClientId(clientId);
-		List<Ticket> tickets = new ArrayList<>();
+		List<Order> orders = new ArrayList<>();
 		Ticket ticket = null;
-
+		Integer orderPrice = null;
+		
 		for (Long orderId : ids) {
 			if (ticketDao.getTicketByOrderId(orderId).isPresent()) {
 				ticket = ticketDao.getTicketByOrderId(orderId).get();
-				tickets.add(ticket);
+				orderPrice = orderDao.getOrderPrice(orderId);
+				
+				Order order = new Order.Builder()
+						.addTicket(ticket)
+						.addOrderPrice(orderPrice)
+						.build();
+				
+				orders.add(order);
 			}
 		}
-		order.setTickets(tickets);
-		return Optional.of(order);
+		
+		return Optional.of(orders);
 	}
 
 	public boolean deleteFromOrder(Long clientId, Long ticketId) {

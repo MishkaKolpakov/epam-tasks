@@ -1,22 +1,26 @@
 package model.service;
 
 import dao.DaoFactory;
+import dao.FlightDao;
 import dao.TicketDao;
 
 public class BuyService {
 	private DaoFactory daoFactory;
 	private TicketDao ticketDao;
+	private FlightDao flightDao;
 	private FlightService flightService;
 
 	public BuyService() {
 		this.daoFactory = DaoFactory.getInstance();
 		ticketDao = daoFactory.createTicketDao();
+		flightDao = daoFactory.createFlightDao();
 		flightService = new FlightService(daoFactory);
 	}
 	
 	public BuyService(DaoFactory daoFactory) {
 		this.daoFactory = daoFactory;
 		ticketDao = daoFactory.createTicketDao();
+		flightDao = daoFactory.createFlightDao();
 		flightService = new FlightService(daoFactory);
 	}
 
@@ -34,7 +38,7 @@ public class BuyService {
 
 	public boolean buyTicket(Long ticketId) {
 		if (checkAmount(ticketId)) {
-			return ticketDao.updateAmount(ticketId);
+			return flightDao.updateAmount(ticketId);
 		} else {
 			flightService.deleteEndedTickets(ticketId);
 			return false;

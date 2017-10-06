@@ -38,7 +38,7 @@
 	</form>
 		
 	<a href="${pageContext.request.contextPath}/rest/registration"><fmt:message key="login.signup"/></a><br>
-	<c:out value="${wrongRegistration}"/><br>
+	<c:out value="${successRegistration}"/><br>
 	<c:out value="${guestPage}" />
 </body>
 </html>

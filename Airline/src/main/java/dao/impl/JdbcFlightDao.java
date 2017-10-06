@@ -21,19 +21,23 @@ import model.entity.FlightInstance;
 public class JdbcFlightDao implements FlightDao {
 	private static final Logger LOGGER = Logger.getLogger(JdbcFlightDao.class.getSimpleName());
 	
-	private String SELECT_FROM_FLIGHT = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id "
+	private static final String SELECT_FROM_FLIGHT = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id "
 			+ "FROM flight LEFT JOIN flight_instance on flight.flight_instance_id = flight_instance.id";
 	
-	private String SELECT_FROM_FLIGHT_WHERE = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id FROM flight "
+	private static final String SELECT_FROM_FLIGHT_WHERE = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id FROM flight "
 			+ "LEFT JOIN flight_instance on flight.flight_instance_id = flight_instance.id "
 			+ "WHERE flight_from=? and flight_to=? and DATE(departure_date) = ?";
 	
-	private String SELECT_FROM_FLIGHT_WITHOUT_DATE = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id FROM flight "
+	private static final String SELECT_FROM_FLIGHT_WITHOUT_DATE = "SELECT flight.id, departure_date, flight_from, flight_to, duration, places_amount, flight_instance.id FROM flight "
 			+ "LEFT JOIN flight_instance on flight.flight_instance_id = flight_instance.id "
 			+ "WHERE flight_from=? and flight_to=?";
 	
-	private String DELETE_TICKET_FLIGHT = "DELETE f, t FROM flight f "
+	private static final String DELETE_TICKET_FLIGHT = "DELETE f, t FROM flight f "
 			+ "INNER JOIN ticket t ON f.id = t.id WHERE f.id = ?";
+	
+	private static final String UPDATE_SET_AMOUNT = "UPDATE flight set places_amount = (SELECT places_amount-1 from "
+			+ "(SELECT * from flight) as places where id = ?) WHERE id = ?";
+	
 	
 	private String INSERT_INTO_FLIGHT = "INSERT INTO flight(id, departure_date, flight_instance_id, places_amount) VALUES(?,?,?,?)";
 	
@@ -180,6 +184,18 @@ public class JdbcFlightDao implements FlightDao {
 			return true;
 		} catch (SQLException e) {
 			LOGGER.error("Caught exception in find delete ticket by id method, flight dao");
+			throw new RuntimeException(e);
+		}
+	}
+	
+	@Override
+	public boolean updateAmount(Long id) {
+		try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SET_AMOUNT)) {
+			preparedStatement.setLong(1, id);
+			preparedStatement.setLong(2, id);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}

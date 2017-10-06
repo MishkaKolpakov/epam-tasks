@@ -42,7 +42,7 @@
 
 	<filter-mapping>
 		<filter-name>securityFilter</filter-name>
-		<url-pattern>/user/*</url-pattern>
+		<url-pattern>/pages/user/*</url-pattern>
 	</filter-mapping>
 
 	<jsp-config>
@@ -60,6 +60,16 @@
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
 
+	<error-page>
+		<exception-type>java.sql.SQLException</exception-type>
+		<location>/pages/error.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/pages/error.jsp</location>
+	</error-page>
+	
 	<error-page>
 		<exception-type>java.sql.SQLException</exception-type>
 		<location>/pages/error.jsp</location>

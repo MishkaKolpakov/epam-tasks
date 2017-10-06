@@ -23,12 +23,10 @@ public class JdbcTicketDao implements TicketDao {
 			+ "flight_from, flight_to, duration " + "FROM flight f inner join ticket t on f.id = t.id "
 			+ "left join flight_instance f_i on f.flight_instance_id = f_i.id " + "WHERE f.id = ?";
 	
-	private final static String UPDATE_SET_AMOUNT = "UPDATE flight set places_amount = (SELECT places_amount-1 from "
-			+ "(SELECT * from flight) as places where id = ?) WHERE id = ?";
+	
 	private final static String UPDATE_SET_PRICE = "UPDATE ticket set ticket_price = (SELECT (ticket_price + (ticket_price * 0.2)) from "
 			+ "(SELECT * from ticket) as tickets where id = ?) WHERE id = ?";
 	
-	private static final String SELECT_ORDER_PRICE = "SELECT order_price FROM orders where id=?";
 	private final static String SELECT_AMOUNT_FROM = "SELECT places_amount FROM flight WHERE id = ?";
 	private static final String SELECT_BAGGAGE_PRICE = "SELECT baggage_price FROM ticket where id = ?";
 	private static final String SELECT_FIRST_QUEUE_PRICE = "SELECT first_queue_price FROM ticket where id = ?";
@@ -75,25 +73,6 @@ public class JdbcTicketDao implements TicketDao {
 		}
 		return result;
 	}
-	
-	@Override
-	public Integer getOrderPrice(Long orderId) {
-		Integer result = 0;
-
-		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_PRICE)) {
-			preparedStatement.setLong(1, orderId);
-			
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			if (resultSet.next()) {
-				result = resultSet.getInt("order_price");
-			}
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		return result;
-	}
 
 	@Override
 	public long insert(Ticket item) {
@@ -125,7 +104,6 @@ public class JdbcTicketDao implements TicketDao {
 			
 			if (resultSet.next()) {
 				result = findElementById(resultSet.getLong(1)).get();
-				result.setFinalPrice(getOrderPrice(orderId));
 			}
 			
 		} catch (SQLException e) {
@@ -167,18 +145,6 @@ public class JdbcTicketDao implements TicketDao {
 				.build();
 
 		return Optional.of(ticket);
-	}
-
-	@Override
-	public boolean updateAmount(Long id) {
-		try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SET_AMOUNT)) {
-			preparedStatement.setLong(1, id);
-			preparedStatement.setLong(2, id);
-			preparedStatement.executeUpdate();
-			return true;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
 	}
 
 	@Override

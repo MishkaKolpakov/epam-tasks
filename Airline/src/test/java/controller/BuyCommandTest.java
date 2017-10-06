@@ -37,7 +37,7 @@ public class BuyCommandTest {
 		when(buyService.buyTicket(anyLong())).thenReturn(true);
 		when(orderService.deleteFromOrder(anyLong(), anyLong())).thenReturn(true);
 
-		String expected = "/orders";
+		String expected = "/pages/user/orders.jsp";
 		String actual = buyCommand.execute(request);
 		
 		verify(buyService).buyTicket(anyLong());
@@ -60,7 +60,7 @@ public class BuyCommandTest {
 		when(buyService.buyTicket(anyLong())).thenReturn(false);
 		when(orderService.deleteFromOrder(anyLong(), anyLong())).thenReturn(true);
 
-		String expected = "/orders";
+		String expected = "/pages/user/orders.jsp";
 		String actual = buyCommand.execute(request);
 		
 		verify(buyService).buyTicket(anyLong());

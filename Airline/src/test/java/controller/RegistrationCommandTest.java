@@ -6,19 +6,19 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
-import controller.command.authentication.RegistrationCommand;
+import controller.command.authentication.Registration;
 import model.service.RegistrationService;
 
 public class RegistrationCommandTest {
 	private HttpServletRequest request;
 	private RegistrationService regisrationService;
-	private RegistrationCommand registrationCommand;
+	private Registration registrationCommand;
 	
 	@Test
 	public void testSuccessfulRegistration(){
 		request = mock(HttpServletRequest.class);
 		regisrationService = mock(RegistrationService.class);
-		registrationCommand = new RegistrationCommand(regisrationService);
+		registrationCommand = new Registration(regisrationService);
 		
 		when(request.getParameter(anyString())).thenReturn("UserDataInformation");
 		
@@ -34,7 +34,7 @@ public class RegistrationCommandTest {
 	public void testWrongInputDataRegistration(){
 		request = mock(HttpServletRequest.class);
 		regisrationService = mock(RegistrationService.class);
-		registrationCommand = new RegistrationCommand(regisrationService);
+		registrationCommand = new Registration(regisrationService);
 		
 		when(request.getParameter(anyString())).thenReturn("Some user data");
 		when(regisrationService.checkByEmailAndPassportId(anyString(), anyString())).thenReturn(true);
@@ -47,7 +47,7 @@ public class RegistrationCommandTest {
 	
 	@Test(expected=NullPointerException.class)
 	public void testNullRequestRegistration(){
-		registrationCommand = new RegistrationCommand(regisrationService);
+		registrationCommand = new Registration(regisrationService);
 		registrationCommand.execute(null);
 	}
 }

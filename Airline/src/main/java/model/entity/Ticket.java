@@ -5,28 +5,21 @@ public class Ticket {
 	private Integer ticketPrice;
 	private Integer baggagePrice;
 	private Integer firstInQueuePrice;
-	private Integer finalPrice;
 	private Flight flight;
 
 	public static class Builder {
 		private Integer ticketPrice;
 		private Integer baggagePrice;
 		private Integer firstInQueuePrice;
-		private Integer finalPrice;
 		private Flight flight;
 		private Long id;
-		
 		
 		public Builder setId(Long id) {
 			this.id = id;
 			return this;
 		}
 		
-		public Builder setFinalPrice(Integer finalPrice) {
-			this.finalPrice = finalPrice;
-			return this;
-		}
-		
+	
 		public Builder setTicketPrice(Integer ticketPrice) {
 			this.ticketPrice = ticketPrice;
 			return this;
@@ -52,7 +45,6 @@ public class Ticket {
 			Ticket ticket = new Ticket();
 			ticket.setId(id);
 			ticket.setBaggagePrice(baggagePrice);
-			ticket.setFinalPrice(finalPrice);
 			ticket.setFirstInQueuePrice(firstInQueuePrice);
 			ticket.setTicketPrice(ticketPrice);
 			ticket.setFlight(flight);
@@ -70,14 +62,6 @@ public class Ticket {
 		this.id = id;
 	}
 	
-	public Integer getFinalPrice() {
-		return finalPrice;
-	}
-
-	public void setFinalPrice(Integer finalPrice) {
-		this.finalPrice = finalPrice;
-	}
-
 	public Integer getTicketPrice() {
 		return ticketPrice;
 	}

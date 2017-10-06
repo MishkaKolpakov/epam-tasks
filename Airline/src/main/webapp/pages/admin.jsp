@@ -46,6 +46,6 @@
 	
 	<c:out value="${addWrong}"/>
 	<br>
-	<a href="${pageContext.request.contextPath}/rest/login"><fmt:message key="main.logout"/></a>
+	<a href="${pageContext.request.contextPath}/rest/logout"><fmt:message key="main.logout"/></a>
 </body>
 </html>

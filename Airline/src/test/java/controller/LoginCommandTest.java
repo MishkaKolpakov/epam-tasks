@@ -10,7 +10,7 @@ import java.util.Optional;
 import org.junit.Test;
 
 import javax.servlet.http.HttpSession;
-import controller.command.authentication.LoginCommand;
+import controller.command.authentication.Login;
 import model.entity.User;
 import model.entity.User.Role;
 import model.service.Loginable;
@@ -20,14 +20,14 @@ public class LoginCommandTest {
 	private Loginable loginer;
 	private HttpServletRequest request;
 	private HttpSession session;
-	private LoginCommand loginCommand;
+	private Login loginCommand;
 
 	@Test
 	public void testSuccesUserLogin() {
 		loginer = mock(Loginable.class);
 		request = mock(HttpServletRequest.class);
 		session = mock(HttpSession.class);
-		loginCommand = new LoginCommand(loginer);
+		loginCommand = new Login(loginer);
 
 		User user = new User.Builder().setEmail("misha@mail").setPassword("12345").setRole(Role.valueOf("USER"))
 				.build();
@@ -37,7 +37,7 @@ public class LoginCommandTest {
 		when(request.getSession()).thenReturn(session);
 		when(loginer.login(anyString(), anyString())).thenReturn(Optional.of(user));
 
-		String expected = "/welcome";
+		String expected = "/pages/user/welcome.jsp";
 		String actual = loginCommand.execute(request);
 
 		assertEquals(expected, actual);
@@ -48,7 +48,7 @@ public class LoginCommandTest {
 		loginer = mock(Loginable.class);
 		request = mock(HttpServletRequest.class);
 		session = mock(HttpSession.class);
-		loginCommand = new LoginCommand(loginer);
+		loginCommand = new Login(loginer);
 
 		loginCommand.execute(null);
 	}
@@ -58,14 +58,14 @@ public class LoginCommandTest {
 		loginer = mock(Loginable.class);
 		request = mock(HttpServletRequest.class);
 		session = mock(HttpSession.class);
-		loginCommand = new LoginCommand(loginer);
+		loginCommand = new Login(loginer);
 
 		when(request.getParameter("email")).thenReturn("misha@mail");
 		when(request.getParameter("password")).thenReturn("asdasd");
 		when(request.getSession()).thenReturn(session);
 		when(loginer.login(anyString(), anyString())).thenReturn(Optional.empty());
 
-		String expected = "/login";
+		String expected = "/pages/guest/login.jsp";
 		String actual = loginCommand.execute(request);
 
 		assertEquals(expected, actual);
@@ -76,7 +76,7 @@ public class LoginCommandTest {
 		loginer = mock(Loginable.class);
 		request = mock(HttpServletRequest.class);
 		session = mock(HttpSession.class);
-		loginCommand = new LoginCommand(loginer);
+		loginCommand = new Login(loginer);
 
 		User user = new User.Builder()
 				.setEmail("misha@gmail.com")
@@ -89,7 +89,7 @@ public class LoginCommandTest {
 		when(request.getSession()).thenReturn(session);
 		when(loginer.login(anyString(), anyString())).thenReturn(Optional.of(user));
 	
-		String expected = "/admin";
+		String expected = "/pages/admin.jsp";
 		String actual = loginCommand.execute(request);
 
 		assertEquals(expected, actual);

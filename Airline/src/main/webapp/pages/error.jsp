@@ -8,7 +8,7 @@
 <title>Error</title>
 </head>
 <body>
-	<c:out value="${contact}" />
-	<a href="${pageContext.request.contextPath}/rest/book"><fmt:message key="ticket.back"/></a>
+	<fmt:message key="error" />
+	<a href="${pageContext.request.contextPath}/rest/logout"><fmt:message key="ticket.back" /></a>
 </body>
 </html>

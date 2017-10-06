@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,13 +16,14 @@ public class JdbcOrderDao implements OrderDao {
 	
 	private static final String SELECT_ORDER_ID = "SELECT id FROM orders WHERE client_id = ?";
 	private static final String SELECT_WHERE_ORDERID_CLIENTID = "SELECT id FROM orders WHERE client_id = ? and ticket_id = ?";
-
+	private static final String SELECT_ORDER_PRICE = "SELECT order_price FROM orders where id=?";
+	private static final String SELECT_FROM_WHERE_ID = "SELECT * FROM orders WHERE id = ?";
 	private Connection connection;
 
 	public JdbcOrderDao(Connection connection) {
 		this.connection = connection;
 	}
-
+	
 	@Override
 	public List<Long> getOrderIdsByClientId(Long clientId) {
 		List<Long> result = new ArrayList<>();
@@ -78,7 +80,20 @@ public class JdbcOrderDao implements OrderDao {
 
 	@Override
 	public Optional<Order> findElementById(Long id) {
-		return null;
+		Optional<Order> result = Optional.empty();
+		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_WHERE_ID)) {
+
+			preparedStatement.setLong(1, id);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+				result = getOrderByResultSet(resultSet);
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return result;
 	}
 
 	@Override
@@ -89,5 +104,30 @@ public class JdbcOrderDao implements OrderDao {
 	@Override
 	public void close() throws Exception {
 		connection.close();
+	}
+
+	
+	@Override
+	public Integer getOrderPrice(Long orderId) {
+		Integer result = 0;
+
+		try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDER_PRICE)) {
+			preparedStatement.setLong(1, orderId);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+				result = resultSet.getInt("order_price");
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return result;
+	}
+	
+	private Optional<Order> getOrderByResultSet(ResultSet resultSet) throws SQLException{
+		Order order = new Order.Builder().addOrderPrice(resultSet.getInt("order_price")).build();
+		return Optional.of(order);
 	}
 }

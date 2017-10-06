@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 import java.util.Map;
 
-import controller.command.authentication.LoginCommand;
+import controller.command.authentication.Login;
 import controller.command.authentication.LoginForm;
-import controller.command.authentication.LogoutCommand;
-import controller.command.authentication.RegistrationCommand;
+import controller.command.authentication.Logout;
+import controller.command.authentication.Registration;
 import controller.command.authentication.RegistrationForm;
 import controller.command.service.ShowContact;
 import controller.command.service.AddFlight;
@@ -17,7 +17,7 @@ import controller.command.service.ChangeLanguage;
 import controller.command.service.AddToOrder;
 import controller.command.service.ShowProfile;
 import controller.command.service.ShowFlights;
-import controller.command.service.ShowOrderCommand;
+import controller.command.service.ShowOrder;
 import controller.command.service.ShowTicket;
 
 public class UrlMap {
@@ -25,16 +25,16 @@ public class UrlMap {
 	private static final Map<String, ActionCommand> urlMap = new HashMap<>();
 
 	static {
-		urlMap.put("POST:/login", new LoginCommand());
-		urlMap.put("GET:/logout", new LogoutCommand());
-		urlMap.put("POST:/registration", new RegistrationCommand());
+		urlMap.put("POST:/login", new Login());
+		urlMap.put("GET:/logout", new Logout());
+		urlMap.put("POST:/registration", new Registration());
 		urlMap.put("GET:/registration", new RegistrationForm());
 		urlMap.put("GET:/login", new LoginForm());
 		urlMap.put("GET:/profile", new ShowProfile());
 		urlMap.put("GET:/about", new ShowContact());
 		urlMap.put("POST:/add", new AddFlight());
 		urlMap.put("GET:/book", new ShowFlights());
-		urlMap.put("GET:/orders", new ShowOrderCommand());
+		urlMap.put("GET:/orders", new ShowOrder());
 		urlMap.put("POST:/order", new AddToOrder());
 		urlMap.put("POST:/ticket", new ShowTicket());
 		urlMap.put("POST:/find", new FindFlight());
