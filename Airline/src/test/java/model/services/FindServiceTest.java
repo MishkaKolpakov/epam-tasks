@@ -1,10 +1,11 @@
 package model.services;
 
 import dao.DaoFactory;
-import dao.FlightDao;
-import model.entity.Flight;
+import dao.TicketDao;
 import model.entity.FlightInstance;
-import model.service.FindService;
+import model.entity.Ticket;
+import model.service.impl.FindService;
+
 import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
@@ -20,15 +21,15 @@ import static org.junit.Assert.*;
 
 public class FindServiceTest {
 	private DaoFactory daoFactory;
-	private FlightDao flightDao;
+	private TicketDao ticketDao;
 	private FindService findService;
 
 	@Test
-	public void testSuccesstFindFlight() {
+	public void testSuccesstfindFlight() {
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		findService = new FindService(daoFactory);
 
 		FlightInstance kievLviv = new FlightInstance.Builder().setFrom("Kiev").setTo("Lviv").build();
@@ -36,51 +37,51 @@ public class FindServiceTest {
 		LocalTime firstLocalTime = LocalTime.of(14, 00);
 		LocalTime secondLocalTime = LocalTime.of(21, 00);
 		
-		List<Flight> expected = Arrays.asList(new Flight[] {
-				new Flight.Builder()
+		List<Ticket> expected = Arrays.asList(new Ticket[] {
+				new Ticket.Builder()
 						.setDepartureDateTime(LocalDateTime.of(localDate, firstLocalTime))
 						.setFlightInstance(kievLviv)
 						.build(),
 				
-				new Flight.Builder()
+				new Ticket.Builder()
 						.setDepartureDateTime(LocalDateTime.of(localDate, secondLocalTime))
 						.setFlightInstance(kievLviv)
 						.build() });
 
-		when(flightDao.findFlight(anyString(), anyString(), anyObject())).thenReturn(Optional.of(expected));
+		when(ticketDao.findFlight(anyString(), anyString(), anyObject())).thenReturn(Optional.of(expected));
 
-		List<Flight> actual = findService.findFlight("Kiev", "Lviv", localDate).get();
+		List<Ticket> actual = findService.findFlight("Kiev", "Lviv", localDate).get();
 
-		verify(daoFactory).createFlightDao();
-		verify(flightDao).findFlight(anyString(), anyString(), anyObject());
-
-		assertEquals(expected, actual);
-	}
-	
-	@Test
-	public void testEmptyFindFlight() {
-		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
-		
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
-		findService = new FindService(daoFactory);		
-		
-		Optional<List<Flight>> expected = Optional.empty(); 
-		when(flightDao.findFlight(anyString(), anyString(), anyObject())).thenReturn(Optional.empty());
-		Optional<List<Flight>> actual = findService.findFlight("Kiev", "Lviv", LocalDate.of(2017,11,22));
-		
-		verify(daoFactory).createFlightDao();
-		verify(flightDao).findFlight(anyString(), anyString(), anyObject());
+		verify(daoFactory).createTicketDao();
+		verify(ticketDao).findFlight(anyString(), anyString(), anyObject());
 
 		assertEquals(expected, actual);
 	}
 	
 	@Test
-	public void testSuccesstFindFlightWithoutDate() {
+	public void testEmptyfindFlight() {
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
+		findService = new FindService(daoFactory);
+		
+		Optional<List<Ticket>> expected = Optional.empty(); 
+		when(ticketDao.findFlight(anyString(), anyString(), anyObject())).thenReturn(Optional.empty());
+		Optional<List<Ticket>> actual = findService.findFlight("Kiev", "Lviv", LocalDate.of(2017,11,22));
+		
+		verify(daoFactory).createTicketDao();
+		verify(ticketDao).findFlight(anyString(), anyString(), anyObject());
+
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void testSuccesstfindFlightWithoutDate() {
+		daoFactory = mock(DaoFactory.class);
+		ticketDao = mock(TicketDao.class);
+
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		findService = new FindService(daoFactory);
 
 		FlightInstance kievLviv = new FlightInstance.Builder()
@@ -88,39 +89,39 @@ public class FindServiceTest {
 				.setTo("Lviv")
 				.build();
 		
-		List<Flight> expected = Arrays.asList(new Flight[] {
-				new Flight.Builder()
+		List<Ticket> expected = Arrays.asList(new Ticket[] {
+				new Ticket.Builder()
 						.setFlightInstance(kievLviv)
 						.build(),
 				
-				new Flight.Builder()
+				new Ticket.Builder()
 						.setFlightInstance(kievLviv)
 						.build() });
 
-		when(flightDao.findFlightWitoutDate(anyString(), anyString())).thenReturn(Optional.of(expected));
+		when(ticketDao.findFlightWitoutDate(anyString(), anyString())).thenReturn(Optional.of(expected));
 
-		List<Flight> actual = findService.findFlightWithoutDate("Kiev", "Lviv").get();
+		List<Ticket> actual = findService.findFlightWithoutDate("Kiev", "Lviv").get();
 
-		verify(daoFactory).createFlightDao();
-		verify(flightDao).findFlightWitoutDate(anyString(), anyString());
+		verify(daoFactory).createTicketDao();
+		verify(ticketDao).findFlightWitoutDate(anyString(), anyString());
 
 		assertEquals(expected, actual);
 	}
 	
 	@Test
-	public void testEmptyFindFlightWithoutDate() {
+	public void testEmptyfindFlightWithoutDate() {
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 		
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		findService = new FindService(daoFactory);		
 		
-		Optional<List<Flight>> expected = Optional.empty(); 
-		when(flightDao.findFlightWitoutDate(anyString(), anyString())).thenReturn(Optional.empty());
-		Optional<List<Flight>> actual = findService.findFlightWithoutDate("Kiev", "Lviv");
+		Optional<List<Ticket>> expected = Optional.empty(); 
+		when(ticketDao.findFlightWitoutDate(anyString(), anyString())).thenReturn(Optional.empty());
+		Optional<List<Ticket>> actual = findService.findFlightWithoutDate("Kiev", "Lviv");
 		
-		verify(daoFactory).createFlightDao();
-		verify(flightDao).findFlightWitoutDate(anyString(), anyString());
+		verify(daoFactory).createTicketDao();
+		verify(ticketDao).findFlightWitoutDate(anyString(), anyString());
 
 		assertEquals(expected, actual);
 	}

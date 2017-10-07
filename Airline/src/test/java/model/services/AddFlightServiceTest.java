@@ -9,7 +9,7 @@ import org.junit.Test;
 import dao.DaoFactory;
 import dao.FlightInstanceDao;
 import model.entity.FlightInstance;
-import model.service.AddFlightService;
+import model.service.impl.AddFlightService;
 
 public class AddFlightServiceTest {
 	private DaoFactory daoFactory;

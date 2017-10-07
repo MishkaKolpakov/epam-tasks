@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 import model.entity.Client;
 import model.entity.User;
-import model.service.RegistrationService;
+import model.service.impl.RegistrationService;
 
 public class RegistrationServiceTest {
 

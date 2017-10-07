@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import controller.command.service.AddFlight;
 import model.entity.FlightInstance;
-import model.service.AddFlightService;
+import model.service.impl.AddFlightService;
 
 public class AddCommandTest {
 

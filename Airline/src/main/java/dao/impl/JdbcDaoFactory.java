@@ -1,9 +1,7 @@
 package dao.impl;
 
 import dao.ClientDao;
-
 import dao.DaoFactory;
-import dao.FlightDao;
 import dao.FlightInstanceDao;
 import dao.OrderDao;
 import dao.TicketDao;
@@ -38,11 +36,6 @@ public class JdbcDaoFactory extends DaoFactory {
 	@Override
 	public UserDao createUserDao() {
 		return new JdbcUserDao(getConnection());
-	}
-
-	@Override
-	public FlightDao createFlightDao() {
-		return new JdbcFlightDao(getConnection());
 	}
 
 	@Override

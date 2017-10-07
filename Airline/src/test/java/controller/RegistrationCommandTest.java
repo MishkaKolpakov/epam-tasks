@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 import controller.command.authentication.Registration;
-import model.service.RegistrationService;
+import model.service.impl.RegistrationService;
 
 public class RegistrationCommandTest {
 	private HttpServletRequest request;

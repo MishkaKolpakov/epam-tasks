@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import config.ConfigurationManager;
 import controller.command.ActionCommand;
 import model.entity.Ticket;
-import model.service.TicketService;
+import model.service.impl.TicketService;
 
 public class ShowTicket implements ActionCommand{
 	private static final Logger LOGGER = Logger.getLogger(ShowTicket.class.getSimpleName());

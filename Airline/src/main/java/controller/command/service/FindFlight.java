@@ -1,6 +1,7 @@
 package controller.command.service;
 
 import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,8 +11,8 @@ import org.apache.log4j.Logger;
 
 import config.ConfigurationManager;
 import controller.command.ActionCommand;
-import model.entity.Flight;
-import model.service.FindService;
+import model.entity.Ticket;
+import model.service.impl.FindService;
 
 public class FindFlight implements ActionCommand{
 	private static final Logger LOGGER = Logger.getLogger(FindFlight.class.getSimpleName());
@@ -28,7 +29,7 @@ public class FindFlight implements ActionCommand{
 	@Override
 	public String execute(HttpServletRequest request) {
 		String page = null;
-		Optional<List<Flight>> result = null;
+		Optional<List<Ticket>> result = null;
 	
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");

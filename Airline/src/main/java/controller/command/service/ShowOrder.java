@@ -13,7 +13,7 @@ import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
 import model.entity.Order;
-import model.service.OrderService;
+import model.service.impl.OrderService;
 
 public class ShowOrder implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(ShowOrder.class.getSimpleName());

@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import config.ConfigurationManager;
 import controller.command.ActionCommand;
 import model.entity.Client;
-import model.service.ProfileService;
+import model.service.impl.ProfileService;
 
 public class ShowProfile implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(ShowProfile.class.getSimpleName());

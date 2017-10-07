@@ -13,15 +13,15 @@
 	<c:import url="/pages/static/header.jsp" />
 	
 	<fmt:message key="service.date" />
-	<c:out value="${ticket.flight.departureDateTime}" /><br>
+	<c:out value="${ticket.departureDateTime}" /><br>
 	<fmt:message key="service.direction" />
-	<c:out value="${ticket.flight.flightInstance.from}" />
+	<c:out value="${ticket.flightInstance.from}" />
 	<c:out value=" - " />
-	<c:out value="${ticket.flight.flightInstance.to}" /><br>
+	<c:out value="${ticket.flightInstance.to}" /><br>
 	<fmt:message key="service.duration" />
-	<c:out value="${ticket.flight.flightInstance.duration}" /><br>
+	<c:out value="${ticket.flightInstance.duration}" /><br>
 	<fmt:message key="service.amount" />
-	<c:out value="${ticket.flight.placesAmount}" /><br>
+	<c:out value="${ticket.placesAmount}" /><br>
 	<fmt:message key="ticket.price" />
 	<ctg:money amountInCents="${ticket.ticketPrice}" /><br>
 	<fmt:message key="ticket.queue.price" />

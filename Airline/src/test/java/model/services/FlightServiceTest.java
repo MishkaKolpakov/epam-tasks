@@ -9,23 +9,23 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import dao.DaoFactory;
-import dao.FlightDao;
-import model.entity.Flight;
+import dao.TicketDao;
 import model.entity.FlightInstance;
-import model.service.FlightService;
+import model.entity.Ticket;
+import model.service.impl.FlightService;
 
 public class FlightServiceTest {
 
 	private DaoFactory daoFactory;
-	private FlightDao flightDao;
+	private TicketDao ticketDao;
 	private FlightService flightService;
 	
 	@Test
 	public void testFindAll(){
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 		
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		flightService = new FlightService(daoFactory);
 		
 		FlightInstance kievLviv = new FlightInstance.Builder()
@@ -33,16 +33,16 @@ public class FlightServiceTest {
 				.setTo("Lviv")
 				.build();
 		
-		List<Flight> expected = Arrays.asList(new Flight[]{
-			new Flight.Builder().setFlightInstance(kievLviv).build(),
-			new Flight.Builder().setFlightInstance(kievLviv).build()
+		List<Ticket> expected = Arrays.asList(new Ticket[]{
+			new Ticket.Builder().setFlightInstance(kievLviv).build(),
+			new Ticket.Builder().setFlightInstance(kievLviv).build()
 		});
 	
-		when(flightDao.findAll()).thenReturn(expected);
-		List<Flight> actual = flightService.getAllFlights();
+		when(ticketDao.findAll()).thenReturn(expected);
+		List<Ticket> actual = flightService.getAllFlights();
 		
-		verify(daoFactory, times(1)).createFlightDao();
-		verify(flightDao, times(1)).findAll();
+		verify(daoFactory, times(1)).createTicketDao();
+		verify(ticketDao, times(1)).findAll();
 		
 		assertEquals(expected, actual);
 	}
@@ -50,32 +50,32 @@ public class FlightServiceTest {
 	@Test
 	public void testCorrectDeleteEnded(){
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 		
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		flightService = new FlightService(daoFactory);
 	
-		when(flightDao.deleteTicketById(anyLong())).thenReturn(true);
+		when(ticketDao.deleteTicketById(anyLong())).thenReturn(true);
 				
 		assertTrue(flightService.deleteEndedTickets(1L));
 		
-		verify(daoFactory, times(1)).createFlightDao();
-		verify(flightDao).deleteTicketById(1L);
+		verify(daoFactory, times(1)).createTicketDao();
+		verify(ticketDao).deleteTicketById(1L);
 	}
 	
 	@Test
 	public void testFailDeleteEnded(){
 		daoFactory = mock(DaoFactory.class);
-		flightDao = mock(FlightDao.class);
+		ticketDao = mock(TicketDao.class);
 		
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		flightService = new FlightService(daoFactory);
 	
-		when(flightDao.deleteTicketById(anyLong())).thenReturn(false);
+		when(ticketDao.deleteTicketById(anyLong())).thenReturn(false);
 				
 		assertFalse(flightService.deleteEndedTickets(1L));
 		
-		verify(daoFactory, times(1)).createFlightDao();
-		verify(flightDao).deleteTicketById(1L);
+		verify(daoFactory, times(1)).createTicketDao();
+		verify(ticketDao).deleteTicketById(1L);
 	}
 }

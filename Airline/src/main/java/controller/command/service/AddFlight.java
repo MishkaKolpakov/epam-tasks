@@ -1,16 +1,16 @@
 package controller.command.service;
 
 import java.time.LocalDateTime;
+
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
-import model.entity.Flight;
 import model.entity.FlightInstance;
 import model.entity.Ticket;
-import model.service.AddFlightService;
+import model.service.impl.AddFlightService;
 
 public class AddFlight implements ActionCommand{
 	private static final Logger LOGGER = Logger.getLogger(AddFlight.class.getSimpleName());
@@ -41,10 +41,7 @@ public class AddFlight implements ActionCommand{
 	}
 	
 	private boolean insertNewFlight(HttpServletRequest request){
-		Integer ticketPrice = Integer.parseInt(request.getParameter("ticketPrice"));
-		Integer baggagePrice = Integer.parseInt(request.getParameter("baggagePrice"));
-		Integer queuePrice = Integer.parseInt(request.getParameter("queuePrice"));
-		Integer amount = Integer.parseInt(request.getParameter("amount"));
+		
 		
 		LocalDateTime localDate = dateTimeParser(request);
 		
@@ -54,9 +51,8 @@ public class AddFlight implements ActionCommand{
 			return false;
 		}
 
-		Ticket ticket = createTicket(ticketPrice, baggagePrice, queuePrice);		
-		Flight flight = createFlight(localDate, amount, flightInstance);
-		addFlightService.addFlight(ticket, flight);
+		Ticket ticket = createTicket(request, localDate, flightInstance);		
+		addFlightService.addFlight(ticket);
 		return true;
 	}
 	
@@ -82,20 +78,19 @@ public class AddFlight implements ActionCommand{
 		return result.get();
 	}
 	
-	private Ticket createTicket(Integer ticketPrice, Integer baggagePrice, Integer queuePrice){
+	private Ticket createTicket(HttpServletRequest request, LocalDateTime localDate, FlightInstance flightInstance){
+		Integer ticketPrice = Integer.parseInt(request.getParameter("ticketPrice"));
+		Integer baggagePrice = Integer.parseInt(request.getParameter("baggagePrice"));
+		Integer queuePrice = Integer.parseInt(request.getParameter("queuePrice"));
+		Integer amount = Integer.parseInt(request.getParameter("amount"));
+		
 		return new Ticket.Builder()
 				.setTicketPrice(ticketPrice)
 				.setBaggagePrice(baggagePrice)
 				.setFirstInQueuePrice(queuePrice)
-				.build();
-	}
-	
-	private Flight createFlight(LocalDateTime localDate, Integer amount, FlightInstance flightInstance){
-		return new Flight.Builder()
 				.setDepartureDateTime(localDate)
 				.setPlacesAmount(amount)
 				.setFlightInstance(flightInstance)
 				.build();
-	}
-	
+	}	
 }

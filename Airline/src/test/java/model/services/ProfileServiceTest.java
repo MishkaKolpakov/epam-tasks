@@ -4,7 +4,8 @@ import dao.DaoFactory;
 import dao.UserDao;
 import model.entity.Client;
 import model.entity.User;
-import model.service.ProfileService;
+import model.service.impl.ProfileService;
+
 import static org.mockito.Mockito.*;
 
 import java.util.Optional;

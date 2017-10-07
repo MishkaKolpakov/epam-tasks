@@ -3,7 +3,8 @@ package model.services;
 import dao.DaoFactory;
 import dao.TicketDao;
 import model.entity.Ticket;
-import model.service.TicketService;
+import model.service.impl.TicketService;
+
 import static org.mockito.Mockito.*;
 
 import java.util.Optional;

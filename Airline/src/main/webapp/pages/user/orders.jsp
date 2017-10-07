@@ -14,15 +14,15 @@
 	
 	<c:forEach items="${orders}" var="order">
 		<fmt:message key="service.date" />
-		<c:out value="${order.ticket.flight.departureDateTime}" /><br>
+		<c:out value="${order.ticket.departureDateTime}" /><br>
 		
 		<fmt:message key="service.direction" />
-		<c:out value="${order.ticket.flight.flightInstance.from}" />
+		<c:out value="${order.ticket.flightInstance.from}" />
 		<c:out value=" - " />
-		<c:out value="${order.ticket.flight.flightInstance.to}" /><br>
+		<c:out value="${order.ticket.flightInstance.to}" /><br>
 		
 		<fmt:message key="service.duration" />
-		<c:out value="${order.ticket.flight.flightInstance.duration}" /><br>
+		<c:out value="${order.ticket.flightInstance.duration}" /><br>
 		
 		<fmt:message key="order.final.price"/>
 		<ctg:money amountInCents="${order.orderPrice}" /><br>

@@ -1,32 +1,28 @@
 package model.services;
 
 import static org.mockito.Mockito.*;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 import dao.DaoFactory;
-import dao.FlightDao;
 import dao.TicketDao;
-import model.service.BuyService;
-import model.service.FlightService;
+import model.service.impl.BuyService;
+import model.service.impl.FlightService;
 
 public class BuyServiceTest {
 	private DaoFactory daoFactory;
 	private TicketDao ticketDao;
 	private BuyService buyService;
 	private FlightService flightService;
-	private FlightDao flightDao;
+	
 
 	@Test
 	public void testSuccessBuyTicket() {
 		daoFactory = mock(DaoFactory.class);
 		ticketDao = mock(TicketDao.class);
-		flightDao = mock(FlightDao.class);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		
 		when(ticketDao.findAmountById(anyLong())).thenReturn(1);
-		when(flightDao.updateAmount(anyLong())).thenReturn(true);
+		when(ticketDao.updateAmount(anyLong())).thenReturn(true);
 
 		buyService = new BuyService(daoFactory);
 
@@ -37,10 +33,10 @@ public class BuyServiceTest {
 	public void testBuyEndedTicket() {
 		daoFactory = mock(DaoFactory.class);
 		flightService = mock(FlightService.class);
-		flightDao = mock(FlightDao.class);
+		
 		ticketDao = mock(TicketDao.class);
 
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
+		
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		when(ticketDao.findAmountById(anyLong())).thenReturn(0);
 		when(flightService.deleteEndedTickets(anyLong())).thenReturn(true);
@@ -55,7 +51,6 @@ public class BuyServiceTest {
 		flightService = mock(FlightService.class);
 		ticketDao = mock(TicketDao.class);
 
-		when(daoFactory.createFlightDao()).thenReturn(flightDao);
 		when(daoFactory.createTicketDao()).thenReturn(ticketDao);
 		buyService = new BuyService(daoFactory);
 

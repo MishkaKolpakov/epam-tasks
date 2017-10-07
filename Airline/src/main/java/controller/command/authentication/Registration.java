@@ -9,11 +9,12 @@ import config.MessageManager;
 import controller.command.ActionCommand;
 import model.entity.Client;
 import model.entity.User;
-import model.service.RegistrationService;
+import model.service.Registerable;
+import model.service.impl.RegistrationService;
 
 public class Registration implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(Registration.class.getSimpleName());
-	private RegistrationService registrationService;
+	private Registerable registrationService;
 	
 	public Registration(RegistrationService registrationService){
 		this.registrationService = registrationService;

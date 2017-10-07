@@ -7,12 +7,13 @@ import org.apache.log4j.Logger;
 import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
-import model.service.OrderService;
-import model.service.TicketService;
+import model.service.Orderable;
+import model.service.impl.OrderService;
+import model.service.impl.TicketService;
 
 public class AddToOrder implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(AddToOrder.class.getSimpleName());
-	private OrderService orderService;
+	private Orderable orderService;
 	private TicketService ticketService = TicketService.getInstance();
 	
 	public AddToOrder(OrderService service){

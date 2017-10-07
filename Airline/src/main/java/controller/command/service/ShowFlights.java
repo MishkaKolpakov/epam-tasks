@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 
 import config.ConfigurationManager;
 import controller.command.ActionCommand;
-import model.service.FlightService;
+import model.service.impl.FlightService;
 
 public class ShowFlights implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(ShowFlights.class.getSimpleName());

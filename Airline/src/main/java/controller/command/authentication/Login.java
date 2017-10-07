@@ -10,8 +10,8 @@ import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
 import model.entity.User;
-import model.service.LoginService;
 import model.service.Loginable;
+import model.service.impl.LoginService;
 
 public class Login implements ActionCommand {
 	private static final Logger LOGGER = Logger.getLogger(Login.class.getSimpleName());

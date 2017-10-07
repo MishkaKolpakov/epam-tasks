@@ -6,7 +6,8 @@ import dao.OrderDao;
 import dao.TicketDao;
 import model.entity.Order;
 import model.entity.Ticket;
-import model.service.OrderService;
+import model.service.impl.OrderService;
+
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;

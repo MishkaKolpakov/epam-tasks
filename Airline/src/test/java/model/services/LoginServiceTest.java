@@ -9,7 +9,7 @@ import dao.UserDao;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 import model.entity.User;
-import model.service.LoginService;
+import model.service.impl.LoginService;
 
 public class LoginServiceTest {
 

@@ -7,8 +7,6 @@ public abstract class DaoFactory {
 
 	public abstract UserDao createUserDao();
 	
-	public abstract FlightDao createFlightDao();
-	
 	public abstract TicketDao createTicketDao();
 
 	public abstract FlightInstanceDao createFlightInstanceDao();

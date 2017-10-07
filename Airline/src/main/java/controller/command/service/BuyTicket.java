@@ -8,9 +8,10 @@ import org.apache.log4j.Logger;
 import config.ConfigurationManager;
 import config.MessageManager;
 import controller.command.ActionCommand;
-import model.service.BuyService;
-import model.service.IncreasePriceService;
-import model.service.OrderService;
+import model.service.impl.BuyService;
+import model.service.impl.FlightService;
+import model.service.impl.IncreasePriceService;
+import model.service.impl.OrderService;
 
 public class BuyTicket implements ActionCommand{
 	private static final Logger LOGGER = Logger.getLogger(BuyTicket.class.getSimpleName());
@@ -18,17 +19,20 @@ public class BuyTicket implements ActionCommand{
 	private BuyService buyService;
 	private OrderService orderService;
 	private IncreasePriceService increasePriceService;
+	private FlightService flightService;
 	
-	public BuyTicket(BuyService buyService, OrderService orderService, IncreasePriceService increasePriceService){
+	public BuyTicket(BuyService buyService, OrderService orderService, IncreasePriceService increasePriceService, FlightService flightService){
 		this.buyService = buyService;
 		this.orderService = orderService;
 		this.increasePriceService = increasePriceService;
+		this.flightService = flightService;
 	}
 	
 	public BuyTicket(){
 		this.buyService = BuyService.getInstance();
 		this.orderService = OrderService.getInstance();
 		this.increasePriceService = IncreasePriceService.getInstance();
+		this.flightService = FlightService.getInstance();
 	}
 	
 	@Override
@@ -49,6 +53,7 @@ public class BuyTicket implements ActionCommand{
 		}
 		
 		orderService.deleteFromOrder(clientId, ticketId);
+		flightService.deleteEndedTickets(ticketId);
 		increasePriceService.increasePrice(ticketId, buyService.getTicketsAmount(ticketId));
 		
 		LOGGER.info("The ticket was deleted from client order");
