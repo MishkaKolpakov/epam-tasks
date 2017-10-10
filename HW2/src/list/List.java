@@ -4,14 +4,14 @@ public class List {
 	private Node first;
 
 	public Node get(int index) {
-		if (index == 1) {
+		if (index == 0) {
 			return first;
 		} else {
 			if (index > size()) {
 				throw new RuntimeException("Out of list bound exception");
 			} else {
 				Node current = first;
-				int increment = 1;
+				int increment = 0;
 				while (increment != index) {
 					current = current.getNext();
 					increment++;
@@ -29,7 +29,7 @@ public class List {
 				throw new RuntimeException("Out of list bound exception");
 			} else {
 				Node current = first;
-				int increment = 1;
+				int increment = 0;
 				while (increment != index) {
 					current = current.getNext();
 					increment++;
@@ -42,18 +42,19 @@ public class List {
 	}
 
 	public boolean delete(int index) {
-		if (index == 1) {
-			first = null;
+		if (index == 0) {
+			first = first.getNext();
 		} else {
 			if (index > size()) {
 				throw new RuntimeException("Out of list bound exception");
 			} else {
 				Node current = first;
 				Node previous = null;
-				int increment = 1;
+				int increment = 0;
+				
 				while (increment != index) {
-					current = current.getNext();
 					previous = current;
+					current = current.getNext();
 					increment++;
 				}
 				previous.setNext(current.getNext());
